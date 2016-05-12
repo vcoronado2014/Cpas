@@ -1,0 +1,239 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="VCFramework.SitioWeb.Site1" %>
+
+<%@ Register Assembly="DevExpress.Web.v15.2, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web" TagPrefix="dx" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>CPAS</title>
+      <link href='http://fonts.googleapis.com/css?family=Alegreya+Sans' rel='stylesheet' type='text/css'>
+      <link rel="stylesheet" href="css/foundation.css" />
+      <link rel="stylesheet" href="stylesheets/general_foundicons.css"/>
+    <link rel="stylesheet" href="css/Personalizado.css"/>
+      <script src="js/vendor/modernizr.js"></script>
+
+        <script src="js/jquery-2.1.4.min.js"></script>
+        <script src="js/foundation.min.js"></script>
+    <script src="js/foundation/foundation.equalizer.js"></script>
+        <script src="js/foundation/foundation.offcanvas.js"></script>
+        
+        <script src="../js/foundation/foundation.tooltip.js"></script>
+    <script type="text/javascript">
+        $(document).foundation({
+            equalizer: {
+                // Specify if Equalizer should make elements equal height once they become stacked.
+                equalize_on_stack: false,
+                // Allow equalizer to resize hidden elements
+                act_on_hidden_el: false
+            }
+
+        });
+    </script>
+
+    <style type="text/css">
+        .padding10{
+            padding:10px;
+        }
+        .margin10{
+            margin:10px;
+        }
+        .staticMenu {
+            padding-left: 2.85em;
+            padding-right: 2.85em;
+        }
+        #Menu1 a.static {
+            padding-left: 2.85em;
+            padding-right: 2.85em;
+        }
+
+        .fgWhite{
+            color:white;
+        }
+        .fg-cornflowerblue
+        {
+            color:cornflowerblue;
+        }
+        .titulo{
+            color:white;
+            /*padding-top:5%;*/
+            padding-left:2%;
+            font-size:2.0em;
+        }
+        .resena{
+            color:white;
+            padding-top:0;
+            padding-left:7%;
+            font-size:1.0em;
+        }
+        .icon-bar > * {
+                font-size: 1rem;
+                padding: 0.4rem;
+            }
+        .info-encabezado{
+            font-size:0.8rem;
+            padding-left:0.4rem;
+            padding-bottom:0.4rem;
+        }
+
+        .imgPie{
+            background: url('img/matrix.png') left top repeat; 
+            padding:0;
+            margin:0;
+            min-height:60px;
+        }
+        .icon-bar {
+            /*background:#FFD68D;*/
+        }
+        .bg-icon{
+            background-color:cadetblue;
+            font-size:0.8em;
+        }
+        .bg-datos{
+                background: #333333;
+        }
+        .border-datos
+        {
+            border-bottom:solid 1px #4e4e4e;
+        }
+    </style>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body style="background:azure;">
+    <form id="form1" runat="server" data-abide>
+        <div class="row">
+            <%--<asp:Image ID="imgSuperior" runat="server" ImageUrl="~/img/encabezadoCPASN.png" CssClass="medium-12 columns" />--%>
+            <dx:ASPxImage ID="imgSuperior" runat="server" ShowLoadingImage="true" ImageUrl="~/img/encabezadoCPASN.png" CssClass="medium-12 columns"></dx:ASPxImage>
+            
+        </div>
+        <div class="row bg-datos border-datos">
+            <!-- información del usuario, institución, etc -->
+            <asp:Panel ID="pnlDatos" runat="server" Width="100%">
+
+                <div class="medium-3 columns fgWhite">
+                    <i class="foundicon-smiley info-encabezado">&nbsp&nbsp Usuario:
+                            <asp:Literal ID="litUsuario" runat="server"></asp:Literal></i>
+                </div>
+                <div class="medium-4 columns fgWhite left">
+                    <i class="foundicon-globe info-encabezado">&nbsp&nbsp Rol:
+                            <asp:Literal ID="litRol" runat="server"></asp:Literal>
+                    <dx:ASPxLabel ID="lblIdInstGlobal" runat="server" ClientInstanceName="lblIdInstGlobal" ClientVisible="False">
+                    </dx:ASPxLabel>
+                    </i>
+                </div>
+                
+            </asp:Panel>
+            <div class="medium-5 columns right">
+                <h1 class="label right round success" style="font-size:large;"><asp:Literal ID="LitSubtituloEncabezado" runat="server"></asp:Literal></h1>
+            </div>
+
+        </div>
+
+        <!-- header -->
+        <div class="row bg-datos">
+                <dx:ASPxPanel ID="pnlMenu" runat="server" Width="100%">
+                    <PanelCollection>
+                        <dx:PanelContent runat="server">
+                            <%--<div class="row"></div>--%>
+                            <nav class="top-bar" data-topbar role="navigation">
+                                <ul class="title-area" style="width:100%;">
+                                    <li class="name">
+                                        <h1 class="titulo">
+                                            <asp:Literal ID="litTituloEncabezado" runat="server"></asp:Literal><cite><small>
+                                                </small></cite></h1>
+                                    </li>
+                                    <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+                                    <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+                                </ul>
+                                
+                                <section class="top-bar-section">
+                                    <!-- Right Nav Section -->
+                                    <ul class="right bg-datos">
+                                        <li class="divider"></li>
+                                        <li>
+                                            <asp:HyperLink ID="hlInicio" runat="server" NavigateUrl="~/default.aspx" Text="  Home" CssClass="foundicon-home" >
+                                            </asp:HyperLink>
+                                        </li>
+
+                                        <asp:Literal ID="literalMenu" runat="server"></asp:Literal>
+                                        <li>
+                                            <asp:HyperLink ID="hlIniciarSesion" runat="server" Visible="False" NavigateUrl="~/Ingreso.aspx" Text="Entrar" ForeColor="Yellow" >
+                        
+                    </asp:HyperLink>
+                    
+                                            
+                                        </li>
+                                        <li>
+                                            <asp:LinkButton ID="hlCerrarSesion" runat="server" Visible="false" OnClick="hlCerrarSesion_Click" Text="Salir" ForeColor="Yellow">
+                    </asp:LinkButton>
+                                        </li>
+                                    </ul>
+                                </section>
+                            </nav>
+                        </dx:PanelContent>
+                    </PanelCollection>
+                </dx:ASPxPanel>
+        </div>
+        
+        <!-- contenido -->
+
+        <div class="row">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+
+               
+            </asp:ContentPlaceHolder>
+        </div>
+
+
+        
+        <footer class="row pie">
+            <hr class="hrPie"/>
+            <div class="medium-4 columns">
+                <h6><strong>Síguenos </strong> a través de las redes sociales:</h6>
+            </div>
+
+            <div class="medium-8 columns">
+                <div class="medium-4 columns btnSocial hvr-wobble-horizontal">
+                    <dx:ASPxHyperLink ID="hlVinculoImg1" runat="server" CssClass="small-3 medium-4 columns" Text="" ImageUrl="~/img/facebook.png" NavigateUrl="https://www.facebook.com/cpas.cl/" Cursor="pointer" Target="_blank">
+                    </dx:ASPxHyperLink>
+                    <p class="small-9 medium-8 columns">
+                        <br />
+                        <dx:ASPxHyperLink ID="hlVinculoTexto1" runat="server" Text="http://facebook.com/" CssClass="subheader" NavigateUrl="https://www.facebook.com/cpas.cl/" Cursor="pointer" Target="_blank">
+                        </dx:ASPxHyperLink>
+                    </p>
+                    
+                </div>
+                <div class="medium-4 columns btnSocial hvr-wobble-horizontal">
+                    <dx:ASPxHyperLink ID="hlVinculoImg2" runat="server" CssClass="small-3 medium-4 columns" Text="" ImageUrl="~/img/twitter.png" NavigateUrl="https://twitter.com/CPAScl" Cursor="pointer" Target="_blank">
+                        </dx:ASPxHyperLink>
+                    <p class="small-9 medium-8 columns">
+                        <br />
+                        <dx:ASPxHyperLink ID="hlVinculoTexto2" runat="server" Text="http://twitter.com" CssClass="subheader" NavigateUrl="https://twitter.com/CPAScl" Cursor="pointer" Target="_blank">
+                        </dx:ASPxHyperLink>
+                    </p>
+
+                </div>
+                <div class="medium-4 columns btnSocial hvr-wobble-horizontal">
+                   
+                    <dx:ASPxHyperLink ID="hlVinculoImg3" runat="server" CssClass="small-3 medium-4 columns" Text="" ImageUrl="~/img/email.png" NavigateUrl="mailto:contacto@cpas.cl" Cursor="pointer" Target="_blank">
+                        </dx:ASPxHyperLink>
+                    <p class="small-9 medium-8 columns">
+                        <br />
+                        
+                        <dx:ASPxHyperLink ID="hlVinculoTexto3" runat="server" Text="contacto@cpas.cl" CssClass="subheader" NavigateUrl="mailto:contacto@cpas.cl" Cursor="pointer" Target="_blank">
+                        </dx:ASPxHyperLink>
+                    </p>
+
+                </div>
+
+            </div>
+        </footer>
+
+    </form>
+
+</body>
+</html>

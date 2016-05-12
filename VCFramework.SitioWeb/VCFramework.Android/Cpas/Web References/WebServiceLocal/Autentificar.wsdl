@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="Validar">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="usuario" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="clave" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidarResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ValidarResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtenerProyectosListadosTricel">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="instId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="usuId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtenerProyectosListadosTricelResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ObtenerProyectosListadosTricelResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtenerDocumentos">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="instId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtenerDocumentosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ObtenerDocumentosResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtenerNotificaciones">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="instId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="usuId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtenerNotificacionesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ObtenerNotificacionesResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtenerRendiciones">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="instId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtenerRendicionesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ObtenerRendicionesResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="ValidarSoapIn">
+    <wsdl:part name="parameters" element="tns:Validar" />
+  </wsdl:message>
+  <wsdl:message name="ValidarSoapOut">
+    <wsdl:part name="parameters" element="tns:ValidarResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerProyectosListadosTricelSoapIn">
+    <wsdl:part name="parameters" element="tns:ObtenerProyectosListadosTricel" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerProyectosListadosTricelSoapOut">
+    <wsdl:part name="parameters" element="tns:ObtenerProyectosListadosTricelResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerDocumentosSoapIn">
+    <wsdl:part name="parameters" element="tns:ObtenerDocumentos" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerDocumentosSoapOut">
+    <wsdl:part name="parameters" element="tns:ObtenerDocumentosResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerNotificacionesSoapIn">
+    <wsdl:part name="parameters" element="tns:ObtenerNotificaciones" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerNotificacionesSoapOut">
+    <wsdl:part name="parameters" element="tns:ObtenerNotificacionesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerRendicionesSoapIn">
+    <wsdl:part name="parameters" element="tns:ObtenerRendiciones" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerRendicionesSoapOut">
+    <wsdl:part name="parameters" element="tns:ObtenerRendicionesResponse" />
+  </wsdl:message>
+  <wsdl:portType name="AutentificarSoap">
+    <wsdl:operation name="Validar">
+      <wsdl:input message="tns:ValidarSoapIn" />
+      <wsdl:output message="tns:ValidarSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerProyectosListadosTricel">
+      <wsdl:input message="tns:ObtenerProyectosListadosTricelSoapIn" />
+      <wsdl:output message="tns:ObtenerProyectosListadosTricelSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerDocumentos">
+      <wsdl:input message="tns:ObtenerDocumentosSoapIn" />
+      <wsdl:output message="tns:ObtenerDocumentosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerNotificaciones">
+      <wsdl:input message="tns:ObtenerNotificacionesSoapIn" />
+      <wsdl:output message="tns:ObtenerNotificacionesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerRendiciones">
+      <wsdl:input message="tns:ObtenerRendicionesSoapIn" />
+      <wsdl:output message="tns:ObtenerRendicionesSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="AutentificarSoap" type="tns:AutentificarSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Validar">
+      <soap:operation soapAction="http://tempuri.org/Validar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerProyectosListadosTricel">
+      <soap:operation soapAction="http://tempuri.org/ObtenerProyectosListadosTricel" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerDocumentos">
+      <soap:operation soapAction="http://tempuri.org/ObtenerDocumentos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerNotificaciones">
+      <soap:operation soapAction="http://tempuri.org/ObtenerNotificaciones" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerRendiciones">
+      <soap:operation soapAction="http://tempuri.org/ObtenerRendiciones" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="AutentificarSoap12" type="tns:AutentificarSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Validar">
+      <soap12:operation soapAction="http://tempuri.org/Validar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerProyectosListadosTricel">
+      <soap12:operation soapAction="http://tempuri.org/ObtenerProyectosListadosTricel" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerDocumentos">
+      <soap12:operation soapAction="http://tempuri.org/ObtenerDocumentos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerNotificaciones">
+      <soap12:operation soapAction="http://tempuri.org/ObtenerNotificaciones" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerRendiciones">
+      <soap12:operation soapAction="http://tempuri.org/ObtenerRendiciones" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Autentificar">
+    <wsdl:port name="AutentificarSoap" binding="tns:AutentificarSoap">
+      <soap:address location="http://localhost:17020/WebService/Autentificar.asmx" />
+    </wsdl:port>
+    <wsdl:port name="AutentificarSoap12" binding="tns:AutentificarSoap12">
+      <soap12:address location="http://localhost:17020/WebService/Autentificar.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

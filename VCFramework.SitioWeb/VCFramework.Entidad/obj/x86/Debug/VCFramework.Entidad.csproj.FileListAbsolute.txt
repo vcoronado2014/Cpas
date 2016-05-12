@@ -1,0 +1,9 @@
+D:\VOTACIONES_COLEGIO\VCFramework.SitioWeb\VCFramework.Entidad\bin\x86\Debug\VCFramework.Entidad.dll
+D:\VOTACIONES_COLEGIO\VCFramework.SitioWeb\VCFramework.Entidad\bin\x86\Debug\VCFramework.Entidad.pdb
+D:\VOTACIONES_COLEGIO\VCFramework.SitioWeb\VCFramework.Entidad\obj\x86\Debug\VCFramework.Entidad.dll
+D:\VOTACIONES_COLEGIO\VCFramework.SitioWeb\VCFramework.Entidad\obj\x86\Debug\VCFramework.Entidad.pdb
+D:\VOTACIONES_COLEGIO\VCFramework.SitioWeb\VCFramework.Entidad\obj\x86\Debug\VCFramework.Entidad.csprojResolveAssemblyReference.cache
+C:\VOTACIONES_COLEGIO\VOTACIONES_COLEGIO\VCFramework.SitioWeb\VCFramework.Entidad\bin\x86\Debug\VCFramework.Entidad.dll
+C:\VOTACIONES_COLEGIO\VOTACIONES_COLEGIO\VCFramework.SitioWeb\VCFramework.Entidad\bin\x86\Debug\VCFramework.Entidad.pdb
+C:\VOTACIONES_COLEGIO\VOTACIONES_COLEGIO\VCFramework.SitioWeb\VCFramework.Entidad\obj\x86\Debug\VCFramework.Entidad.dll
+C:\VOTACIONES_COLEGIO\VOTACIONES_COLEGIO\VCFramework.SitioWeb\VCFramework.Entidad\obj\x86\Debug\VCFramework.Entidad.pdb

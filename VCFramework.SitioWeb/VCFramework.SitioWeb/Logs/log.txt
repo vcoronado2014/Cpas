@@ -1,0 +1,111 @@
+<root>
+  <error>
+    <Fecha>2015-12-24 11:27</Fecha>
+    <Detalle>ERROR [42000] [MySQL][ODBC 5.1 Driver][mysqld-5.6.27-log]You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'SP_OBTENER_CURSO_POR_INST_ID' at line 1</Detalle>
+    <Id>1</Id>
+  </error>
+  <error>
+    <Fecha>2015-12-24 11:24</Fecha>
+    <Detalle>ERROR [42000] [MySQL][ODBC 5.1 Driver][mysqld-5.6.27-log]You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'SP_OBTENER_CURSO_POR_INST_ID' at line 1</Detalle>
+    <Id>2</Id>
+  </error>
+  <error>
+    <Fecha>2016-02-07 21:03</Fecha>
+    <Detalle>ERROR [HY001] [MySQL][ODBC 5.1 Driver][mysqld-5.7.6-m16-log]Memory allocation error</Detalle>
+    <Id>3</Id>
+  </error>
+  <error>
+    <Fecha>2016-02-09 12:12</Fecha>
+    <Detalle>El índice estaba fuera del intervalo. Debe ser un valor no negativo e inferior al tamaño de la colección.
+Nombre del parámetro: index</Detalle>
+    <Id>4</Id>
+  </error>
+  <error>
+    <Fecha>2016-02-09 14:00</Fecha>
+    <Detalle>Referencia a objeto no establecida como instancia de un objeto.</Detalle>
+    <Id>5</Id>
+  </error>
+  <error>
+    <Fecha>2016-02-09 14:48</Fecha>
+    <Detalle>El índice estaba fuera del intervalo. Debe ser un valor no negativo e inferior al tamaño de la colección.
+Nombre del parámetro: index</Detalle>
+    <Id>6</Id>
+  </error>
+  <error>
+    <Fecha>2016-02-09 14:15</Fecha>
+    <Detalle>El índice estaba fuera del intervalo. Debe ser un valor no negativo e inferior al tamaño de la colección.
+Nombre del parámetro: index</Detalle>
+    <Id>7</Id>
+  </error>
+  <error>
+    <Fecha>2016-02-09 14:26</Fecha>
+    <Detalle>El índice estaba fuera del intervalo. Debe ser un valor no negativo e inferior al tamaño de la colección.
+Nombre del parámetro: index</Detalle>
+    <Id>8</Id>
+  </error>
+  <error>
+    <Fecha>2016-02-16 22:55</Fecha>
+    <Detalle>ERROR [42000] [MySQL][ODBC 5.1 Driver][mysqld-5.7.6-m16-log]You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'WHERE INST_ID = 4  AND USU_ID = 7' at line 1</Detalle>
+    <Id>9</Id>
+  </error>
+  <error>
+    <Fecha>2016-02-16 22:28</Fecha>
+    <Detalle>ERROR [42000] [MySQL][ODBC 5.1 Driver][mysqld-5.7.6-m16-log]You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'WHERE INST_ID = 4  AND USU_ID = 7' at line 1</Detalle>
+    <Id>10</Id>
+  </error>
+  <error>
+    <Fecha>2016-02-16 22:28</Fecha>
+    <Detalle>ERROR [42000] [MySQL][ODBC 5.1 Driver][mysqld-5.7.6-m16-log]You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'WHERE INST_ID = 4  AND USU_ID = 7' at line 1</Detalle>
+    <Id>11</Id>
+  </error>
+  <error>
+    <Fecha>2016-02-16 22:44</Fecha>
+    <Detalle>ERROR [42000] [MySQL][ODBC 5.1 Driver][mysqld-5.7.6-m16-log]You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'WHERE INST_ID = 4  AND USU_ID = 7' at line 1</Detalle>
+    <Id>12</Id>
+  </error>
+  <error>
+    <Fecha>2016-02-16 22:34</Fecha>
+    <Detalle>ERROR [42000] [MySQL][ODBC 5.1 Driver][mysqld-5.7.6-m16-log]You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'WHERE INST_ID = 4  AND USU_ID = 7' at line 1</Detalle>
+    <Id>13</Id>
+  </error>
+  <error>
+    <Fecha>2016-02-16 22:53</Fecha>
+    <Detalle>ERROR [42000] [MySQL][ODBC 5.1 Driver][mysqld-5.7.6-m16-log]You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'WHERE INST_ID = 4  AND USU_ID = 8' at line 1</Detalle>
+    <Id>14</Id>
+  </error>
+  <error>
+    <Fecha>2016-05-10 10:07</Fecha>
+    <Detalle>Referencia a objeto no establecida como instancia de un objeto.</Detalle>
+    <Id>15</Id>
+  </error>
+  <error>
+    <Fecha>2016-05-10 10:07</Fecha>
+    <Detalle>Referencia a objeto no establecida como instancia de un objeto.</Detalle>
+    <Id>16</Id>
+  </error>
+  <error>
+    <Fecha>2016-05-10 10:40</Fecha>
+    <Detalle>Referencia a objeto no establecida como instancia de un objeto.</Detalle>
+    <Id>17</Id>
+  </error>
+  <error>
+    <Fecha>2016-05-10 10:48</Fecha>
+    <Detalle>Referencia a objeto no establecida como instancia de un objeto.</Detalle>
+    <Id>18</Id>
+  </error>
+  <error>
+    <Fecha>2016-05-10 10:51</Fecha>
+    <Detalle>Referencia a objeto no establecida como instancia de un objeto.</Detalle>
+    <Id>19</Id>
+  </error>
+  <error>
+    <Fecha>2016-05-10 11:30</Fecha>
+    <Detalle>Referencia a objeto no establecida como instancia de un objeto.</Detalle>
+    <Id>20</Id>
+  </error>
+  <error>
+    <Fecha>2016-05-10 11:45</Fecha>
+    <Detalle>Referencia a objeto no establecida como instancia de un objeto.</Detalle>
+    <Id>21</Id>
+  </error>
+</root>

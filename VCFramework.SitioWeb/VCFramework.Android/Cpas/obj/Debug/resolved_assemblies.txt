@@ -1,0 +1,7 @@
+C:\VOTACIONES_COLEGIO_dev_159\VCFramework.SitioWeb\VCFramework.Android\Cpas\obj\Debug\assemblies\Cpas.dll
+C:\VOTACIONES_COLEGIO_dev_159\VCFramework.SitioWeb\VCFramework.Android\Cpas\obj\Debug\assemblies\Mono.Android.dll
+C:\VOTACIONES_COLEGIO_dev_159\VCFramework.SitioWeb\VCFramework.Android\Cpas\obj\Debug\assemblies\mscorlib.dll
+C:\VOTACIONES_COLEGIO_dev_159\VCFramework.SitioWeb\VCFramework.Android\Cpas\obj\Debug\assemblies\System.Core.dll
+C:\VOTACIONES_COLEGIO_dev_159\VCFramework.SitioWeb\VCFramework.Android\Cpas\obj\Debug\assemblies\System.dll
+C:\VOTACIONES_COLEGIO_dev_159\VCFramework.SitioWeb\VCFramework.Android\Cpas\obj\Debug\assemblies\System.Xml.dll
+C:\VOTACIONES_COLEGIO_dev_159\VCFramework.SitioWeb\VCFramework.Android\Cpas\obj\Debug\assemblies\System.Xml.Linq.dll

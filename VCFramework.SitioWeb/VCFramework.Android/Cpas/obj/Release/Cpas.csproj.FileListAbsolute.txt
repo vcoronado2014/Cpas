@@ -1,0 +1,13 @@
+C:\VOTACIONES_COLEGIO_dev_159\VCFramework.SitioWeb\VCFramework.Android\Cpas\bin\Release\Cpas.dll
+C:\VOTACIONES_COLEGIO_dev_159\VCFramework.SitioWeb\VCFramework.Android\Cpas\bin\Release\Cpas.pdb
+C:\VOTACIONES_COLEGIO_dev_159\VCFramework.SitioWeb\VCFramework.Android\Cpas\bin\Release\Cpas.Cpas.apk
+C:\VOTACIONES_COLEGIO_dev_159\VCFramework.SitioWeb\VCFramework.Android\Cpas\bin\Release\Cpas.Cpas-Signed.apk
+C:\VOTACIONES_COLEGIO_dev_159\VCFramework.SitioWeb\VCFramework.Android\Cpas\obj\Release\Cpas.dll
+C:\VOTACIONES_COLEGIO_dev_159\VCFramework.SitioWeb\VCFramework.Android\Cpas\obj\Release\Cpas.pdb
+C:\VOTACIONES_COLEGIO_dev_159\VCFramework.SitioWeb\VCFramework.Android\Cpas\obj\Release\android\bin\Cpas.Cpas.apk
+C:\VOTACIONES_COLEGIO_dev_159\VCFramework.SitioWeb\VCFramework.Android\Cpas\obj\Release\res\layout\main.xml
+C:\VOTACIONES_COLEGIO_dev_159\VCFramework.SitioWeb\VCFramework.Android\Cpas\obj\Release\res\values\strings.xml
+C:\VOTACIONES_COLEGIO_dev_159\VCFramework.SitioWeb\VCFramework.Android\Cpas\obj\Release\res\drawable\icon.png
+C:\VOTACIONES_COLEGIO_dev_159\VCFramework.SitioWeb\VCFramework.Android\Cpas\obj\Release\R.cs.flag
+C:\VOTACIONES_COLEGIO_dev_159\VCFramework.SitioWeb\VCFramework.Android\Cpas\obj\Release\uploadflags.txt
+C:\VOTACIONES_COLEGIO_dev_159\VCFramework.SitioWeb\VCFramework.Android\Cpas\obj\Release\Cpas.csprojResolveAssemblyReference.cache

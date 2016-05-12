@@ -1,0 +1,191 @@
+﻿
+/* ESTE ELEMENTO DETERMINAS EL COLOR DE FONDO DEL ENCABEZADO */
+.colorEncabezado {
+    background: #373737;
+    /*background:#FFD68D;*/
+}
+
+.icon-bar > * img {
+    height: 2.875rem;
+    width: 2.875rem;
+}
+
+.pie {
+    background: white;
+    /*background:#FFD68D;*/
+}
+.hrPie{
+    border: solid #DDDDDD;
+    border-width: 5px 0 0;
+    clear: both;
+    height: 0;
+    margin: 1.25rem 0 1.1875rem;
+}
+.subheader {
+    line-height: 1.4;
+    color: #6f6f6f;
+    font-weight: normal;
+    margin-top: 0.2rem;
+    margin-bottom: 0.5rem;
+    font-size:small;
+}
+.btnSocial {
+    padding: 0;
+    text-decoration: none;
+    cursor:pointer;
+}
+.tituloContacto{
+    color: #0f69b4;
+    padding: 0 0 35px;
+    margin: 0 0 25px;
+    
+    font-size:1.5em;
+    padding-left:50px;
+}
+.textbox{
+    color: #222222;
+    font-size: 0.875rem;
+    padding:0;
+    text-align: left;
+}
+.informativo{
+    margin: 10px;
+    background-color: burlywood;
+    color: black;
+    padding-left: 10px;
+}
+.dxvsETC{
+    background-color: Aqua;
+}
+.bg-titulo{
+        margin: 0.1em;
+        background-color: cyan;
+}
+.dxgvControl, .dxgvDisabled {
+    /* border: 1px Solid #9F9F9F; */
+    font: 12px Tahoma, Geneva, sans-serif;
+    background-color: #F2F2F2;
+    color: Black;
+    cursor: default;
+}
+table {
+    background: #FFFFFF;
+    border: solid 1px #DDDDDD;
+    margin-bottom: 0;
+    table-layout: auto;
+}
+.dxgvHeader, .dxgvHeader table {
+    color: #222222;
+    background-color: #D8D8D8;
+    border:none;
+}
+.padding-right-15 {
+    padding-right:15px;
+}
+/* nuevos estilos de las grillas */
+    /*.dx-wrap {
+        background-color: PeachPuff;
+    }
+    .dx-vam {
+        background-color: PeachPuff;
+    }
+    .dxgvHeader_Mulberry1, .dxgvHeader_Mulberry1 table {
+        color: #8d8d8d;
+        background-color: PeachPuff;
+    }*/
+    #ContentPlaceHolder1_grillaDocumentos_DXHeadersRow0 table {
+        color: #8d8d8d;
+        background-color: PeachPuff;
+            border-width: 0;
+    }
+    #ContentPlaceHolder1_grillaUsuarios_DXHeadersRow0 table {
+        color: #8d8d8d;
+        background-color: PeachPuff;
+            border-width: 0;
+    }
+    #ContentPlaceHolder1_controlVistaDocumentos1_grillaDocumentos_DXHeadersRow0 table {
+        color: #8d8d8d;
+        background-color: PeachPuff;
+            border-width: 0;
+    }
+    #ContentPlaceHolder1_pnlOtros_controlVistaDocumentos1_grillaDocumentos_DXHeadersRow0 table {
+        color: #8d8d8d;
+        background-color: PeachPuff;
+            border-width: 0;
+    }
+    #ContentPlaceHolder1_pnlOtros_controlVistaRendiciones_grillaDocumentos_DXHeadersRow0 table {
+        color: #8d8d8d;
+        background-color: PeachPuff;
+            border-width: 0;
+    }
+    #ContentPlaceHolder1_controlVistaRendiciones1_grillaDocumentos_DXHeadersRow0 table {
+        color: #8d8d8d;
+        background-color: PeachPuff;
+            border-width: 0;
+    }
+    .dxscToolbar_Mulberry1 {
+            border: none;
+            background: #fafafa;
+            padding: 0;
+            margin:0;
+            height: 0;
+        }
+    .dxscViewSelectorButton_Mulberry1
+    {
+	    padding: 5px 8px 6px;
+    }
+    .dxscViewNavigatorButton_Mulberry1.dxscViewNavigatorGotoTodayButton,
+.dxscViewNavigatorButtonHover_Mulberry1.dxscViewNavigatorGotoTodayButton,
+.dxscViewNavigatorButtonPressed_Mulberry1.dxscViewNavigatorGotoTodayButton
+{
+	border-width: 0;
+	background: none;
+	color: #BF4E6A;
+	padding: 3px 5px 5px;
+}
+    #ctl00_ContentPlaceHolder1_ASPxScheduler1_viewNavigatorBlock_ctl00 {border:none;}
+    #ctl00_ContentPlaceHolder1_ASPxScheduler1_viewNavigatorBlock_ctl00_IC {border:none;}
+    #ctl00_ContentPlaceHolder1_ASPxScheduler1_viewNavigatorBlock_ctl00_IC table {border:none;}
+    #ctl00_ContentPlaceHolder1_ASPxScheduler1_viewSelectorBlock_ctl00 {border:none;}
+    #ctl00_ContentPlaceHolder1_ASPxScheduler1_viewSelectorBlock_ctl00_ctl01 {border:none;}
+    #ctl00_ContentPlaceHolder1_ASPxScheduler1_viewNavigatorBlock_ctl00 {border:none;}
+    #ctl00_ContentPlaceHolder1_pnlOtros_ASPxScheduler1_viewNavigatorBlock_ctl00_IC {border:none;}
+    #ctl00_ContentPlaceHolder1_pnlOtros_ASPxScheduler1_viewNavigatorBlock_ctl00_IC table {border:none;}
+    #ctl00_ContentPlaceHolder1_pnlOtros_ASPxScheduler1_viewSelectorBlock_ctl00 {border:none;}
+    #ctl00_ContentPlaceHolder1_pnlOtros_ASPxScheduler1_viewSelectorBlock_ctl00_ctl01 {border:none;}
+    #ctl00_ContentPlaceHolder1_pnlOtros_ASPxScheduler1_viewNavigatorBlock_ctl00 {border:none;}
+
+.dx-ac {
+    text-align: center;
+    background-color: rgb(244, 206, 147);
+    border: none;
+}
+.dx-al > * {
+    background-color: rgb(244, 206, 147);
+    border: none;
+}
+.dxscCellWithPadding {
+    padding: 1px;
+    background-color: rgb(244, 206, 147);
+    border: none;
+}
+#ctl00_ContentPlaceHolder1_pnlOtros_ASPxScheduler1_aptsBlock_AptTemplateContainer110_ctl00_appointmentDiv{    background-color: rgb(193, 244, 156);
+    border: none;}
+.dxscAppointmentInnerBorders_Mulberry1
+{	
+    border: solid 1px #cbcbcb;
+    padding: 0px;
+    background-color:blue;
+}
+
+@media only screen and (max-width: 500px) {
+    .tituloContacto{
+        color: #0f69b4;
+        padding: 0 0 5px;
+        margin: 0 0 2px;
+    
+        font-size:1.0em;
+        padding-left:5px;
+    }
+}
+

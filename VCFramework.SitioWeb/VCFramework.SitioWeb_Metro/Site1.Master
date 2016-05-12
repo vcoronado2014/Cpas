@@ -1,0 +1,63 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="VCFramework.SitioWeb_Metro.Site1" %>
+<%@ Register Assembly="DevExpress.Web.v15.2, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web" TagPrefix="dx" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <title>CPAS</title>
+    <link href="css/metro.css" rel="stylesheet"/>
+    <link href="css/metro-icons.css" rel="stylesheet"/>
+    <link href="css/metro-responsive.css" rel="stylesheet"/>
+    <link href="css/metro-schemes.css" rel="stylesheet"/>
+
+    <link href="css/docs.css" rel="stylesheet"/>
+
+    <script src="js/jquery-2.1.3.min.js"></script>
+    <script src="js/metro.js"></script>
+    <script src="js/docs.js"></script>
+    <script src="js/prettify/run_prettify.js"></script>
+    <script src="js/ga.js"></script>
+    <%--<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>--%>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body style="background:azure;">
+    <form id="form1" class="grid condensed" runat="server">
+        <div class="row cells12 align-center">
+            <asp:Image ID="imgSuperior" runat="server" ImageUrl="~/img/encabezadoCPASN.png" CssClass="colspan12 auto-size" />
+
+        </div>
+        <div class="row cells3 bg-taupe">
+            <!-- información del usuario, institución, etc -->
+            <asp:Panel ID="pnlDatos" runat="server" Width="100%" CssClass="row cells3">
+                <div class="cell">
+                    <span class="mif-user-check fg-white">Usuario:
+                        <asp:Literal ID="litUsuario" runat="server"></asp:Literal></span>
+                </div>
+                <div class="cell">
+                    <span class="mif-earth2 fg-white">Rol:
+                            <asp:Literal ID="litRol" runat="server"></asp:Literal>
+                        <dx:ASPxLabel ID="lblIdInstGlobal" runat="server" ClientInstanceName="lblIdInstGlobal" ClientVisible="False">
+                        </dx:ASPxLabel>
+                    </span>
+                </div>
+                <div class="cell">
+                    <%--<h1 class="label right round success" style="font-size:large;"><asp:Literal ID="LitSubtituloEncabezado" runat="server"></asp:Literal></h1>--%>
+                    <h5 class="tag success rounded">Titulo</h5>
+                </div>
+            </asp:Panel>
+            
+        </div>
+    <div class="container page-content">
+
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </div>
+    </form>
+</body>
+</html>

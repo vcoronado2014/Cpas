@@ -1,0 +1,4 @@
+Cpas.MainActivity, Cpas;md55de188b8fcd06d0cbd16bb36c7001aa1.MainActivity
+Cpas.MainActivity, Cpas, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md55de188b8fcd06d0cbd16bb36c7001aa1.MainActivity
+Cpas.MainActivity;md55de188b8fcd06d0cbd16bb36c7001aa1.MainActivity
+cpas.MainActivity;md55de188b8fcd06d0cbd16bb36c7001aa1.MainActivity
