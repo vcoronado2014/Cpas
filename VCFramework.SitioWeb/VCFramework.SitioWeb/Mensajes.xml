@@ -25,12 +25,12 @@
   </item>
   <item id="Rendicion">
     <nuevo>
-      Se ha agregado una rendición  <strong>{NombreItem}</strong>, para el Establecimiento {NombreInstitucion}:<br />
+      Se ha agregado una rendición  <strong>${NombreItem}</strong>, para el Establecimiento {NombreInstitucion}:<br />
       Estimado Usuario CPAS, ha sido agrgada una rendición para su establecimiento, ingrese a {Url} para poder verlo.<br />
       ***** Mensaje enviado desde el sistema automático de envio de correos de CPAS ****** <br />
     </nuevo>
     <modificado>
-      Ha sido modificado una rendición <strong>{NombreItem}</strong>, para el Establecimiento {NombreInstitucion}:<br />
+      Ha sido modificado una rendición <strong>${NombreItem}</strong>, para el Establecimiento {NombreInstitucion}:<br />
       Estimado Usuario CPAS, ha sido Modificada una rendición para su establecimiento, ingrese a {Url} para poder verlo.<br />
       ***** Mensaje enviado desde el sistema automático de envio de correos de CPAS ****** <br />
     </modificado>
