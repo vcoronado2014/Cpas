@@ -87,7 +87,7 @@ namespace VCFramework.SitioWeb.Administracion
             aus.EsVigente = 1;
             aus.InstId = idInst;
             aus.Modificado = false;
-            aus.NombreUsuario = txtUsername.Text;
+            aus.NombreUsuario = NegocioMySQL.Utiles.Encriptar(txtUsername.Text);
             aus.Nuevo = true;
             aus.Password = txtPassword.Text;
             aus.RolId = idRol;
@@ -97,7 +97,7 @@ namespace VCFramework.SitioWeb.Administracion
                 VCFramework.NegocioMySQL.Factory fac = new NegocioMySQL.Factory();
                 if (fac.Insertar<VCFramework.Entidad.AutentificacionUsuario>(aus) > 0)
                 {
-                    Entidad.AutentificacionUsuario usuarioGuardado = VCFramework.NegocioMySQL.AutentificacionUsuario.ObtenerUsuario(aus.NombreUsuario, aus.Password);
+                    Entidad.AutentificacionUsuario usuarioGuardado = VCFramework.NegocioMySQL.AutentificacionUsuario.ObtenerUsuario(aus.NombreUsuario, NegocioMySQL.Utiles.DesEncriptar(aus.Password));
                     if (usuarioGuardado != null && usuarioGuardado.Id > 0)
                     {
                         VCFramework.Entidad.Persona persona = new VCFramework.Entidad.Persona();

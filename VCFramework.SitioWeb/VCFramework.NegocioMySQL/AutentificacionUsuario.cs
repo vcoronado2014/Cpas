@@ -36,6 +36,9 @@ namespace VCFramework.NegocioMySQL
         }
         public static bool ValidarUsuario(string userName, string password)
         {
+            //viene encriptada... la desencripto
+
+            //password = NegocioMySQL.Utiles.Encriptar(password);
             bool retorno = false;
 
             List<VCFramework.Entidad.AutentificacionUsuario> lista = ListarUsuarios();
@@ -49,6 +52,7 @@ namespace VCFramework.NegocioMySQL
         }
         public static VCFramework.Entidad.AutentificacionUsuario ObtenerUsuario(string userName, string password)
         {
+            password = NegocioMySQL.Utiles.Encriptar(password);
             VCFramework.Entidad.AutentificacionUsuario retorno = new Entidad.AutentificacionUsuario();
 
             List<VCFramework.Entidad.AutentificacionUsuario> lista = ListarUsuarios();

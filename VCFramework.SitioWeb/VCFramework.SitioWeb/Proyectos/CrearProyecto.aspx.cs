@@ -308,8 +308,8 @@ namespace VCFramework.SitioWeb.Proyectos
             }
 
             NegocioMySQL.Factory fac = new NegocioMySQL.Factory();
-
-            if (fac.Insertar<Entidad.Proyectos>(entidad) > 0)
+            int ID_GUARDADO = fac.Insertar<Entidad.Proyectos>(entidad);
+            if (ID_GUARDADO > 0)
             {
 
                 //insertamos al calendario
@@ -361,6 +361,24 @@ namespace VCFramework.SitioWeb.Proyectos
                         }
                     }
 
+                }
+                //si es un archivo nuevo
+                else
+                {
+                    if (nombreArchivo.Length > 10)
+                    {
+                        Entidad.ArchivosProyecto arc = new Entidad.ArchivosProyecto();
+                        arc.Borrado = false;
+                        arc.Eliminado = 0;
+                        arc.Modificado = false;
+                        arc.Nuevo = true;
+                        arc.ProId = ID_GUARDADO;
+                        int idArc = fac.Insertar<Entidad.ArchivosProyecto>(arc);
+                        arc.Id = idArc;
+                        List<Entidad.ArchivosProyecto> listaArc = new List<Entidad.ArchivosProyecto>();
+                        listaArc.Add(arc);
+                        Session["LISTA_SESION"] = listaArc;
+                    }
                 }
                 //ahora enviamos correo
                 if (NegocioMySQL.Utiles.ENVIA_PROYECTOS(entidad.InstId) == "1")
@@ -667,7 +685,9 @@ namespace VCFramework.SitioWeb.Proyectos
         {
             if (e.DataColumn.FieldName == "RutaArchivo")
             {
-                e.Cell.Text = e.CellValue.ToString().Replace("~/ArchivosProyectos/", "");
+                string nombre = e.CellValue.ToString().Replace("~/ArchivosProyectos/", "");
+                e.Cell.Text = NegocioMySQL.Utiles.EntregaNombreArchivo(nombre);
+
 
             }
         }

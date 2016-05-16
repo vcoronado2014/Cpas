@@ -53,7 +53,7 @@ namespace VCFramework.SitioWeb.RecuperarClave
                     {
 
                         //clave incorrecta
-                        if (usuActual.AutentificacionUsuario.Password != txtClaveActual.Text)
+                        if (NegocioMySQL.Utiles.DesEncriptar(usuActual.AutentificacionUsuario.Password) != txtClaveActual.Text)
                         {
                             litMensaje.Text = "Su clave Actual no coincide con nuestro registro.";
                             return;
@@ -73,7 +73,7 @@ namespace VCFramework.SitioWeb.RecuperarClave
                         usuActual.AutentificacionUsuario.Borrado = false;
                         usuActual.AutentificacionUsuario.Modificado = true;
                         usuActual.AutentificacionUsuario.Nuevo = false;
-                        usuActual.AutentificacionUsuario.Password = txtNuevaClave.Text;
+                        usuActual.AutentificacionUsuario.Password = NegocioMySQL.Utiles.Encriptar(txtNuevaClave.Text);
                         if (fac.Update<Entidad.AutentificacionUsuario>(usuActual.AutentificacionUsuario) > 0)
                         {
                             //NegocioMySQL.ServidorCorreo cr = new NegocioMySQL.ServidorCorreo();

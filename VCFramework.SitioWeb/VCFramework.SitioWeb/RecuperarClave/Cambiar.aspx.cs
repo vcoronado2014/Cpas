@@ -53,7 +53,7 @@ namespace VCFramework.SitioWeb.RecuperarClave
                         //NegocioMySQL.ServidorCorreo cr = new NegocioMySQL.ServidorCorreo();
                         //MailMessage mnsj = NegocioMySQL.Utiles.ConstruyeMensajeRecuperarClave(aus.NombreUsuario, aus.Password, aus.CorreoElectronico);
                         //cr.Enviar(mnsj);
-                        var task = System.Threading.Tasks.Task.Factory.StartNew(() => EnviarCorreo(aus.NombreUsuario, aus.Password, aus.CorreoElectronico));
+                        var task = System.Threading.Tasks.Task.Factory.StartNew(() => EnviarCorreo(aus.NombreUsuario, NegocioMySQL.Utiles.DesEncriptar(aus.Password), aus.CorreoElectronico));
                         litMensaje.Text = "Dentro de los proximos minutos recibirá un correo electrónico con su contraseña.";
                     }
                 }

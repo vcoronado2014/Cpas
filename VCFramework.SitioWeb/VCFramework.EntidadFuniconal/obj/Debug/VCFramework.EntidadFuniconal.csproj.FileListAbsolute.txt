@@ -47,3 +47,10 @@ C:\VOTACIONES_COLEGIO_dev_159\VCFramework.SitioWeb\VCFramework.EntidadFuniconal\
 C:\VOTACIONES_COLEGIO_dev_159\VCFramework.SitioWeb\VCFramework.EntidadFuniconal\obj\Debug\VCFramework.EntidadFuniconal.csprojResolveAssemblyReference.cache
 C:\VOTACIONES_COLEGIO_dev_159\VCFramework.SitioWeb\VCFramework.EntidadFuniconal\obj\Debug\VCFramework.EntidadFuniconal.dll
 C:\VOTACIONES_COLEGIO_dev_159\VCFramework.SitioWeb\VCFramework.EntidadFuniconal\obj\Debug\VCFramework.EntidadFuniconal.pdb
+C:\Cpas\Cpas\VCFramework.SitioWeb\VCFramework.EntidadFuniconal\bin\Debug\VCFramework.EntidadFuniconal.dll
+C:\Cpas\Cpas\VCFramework.SitioWeb\VCFramework.EntidadFuniconal\bin\Debug\VCFramework.EntidadFuniconal.pdb
+C:\Cpas\Cpas\VCFramework.SitioWeb\VCFramework.EntidadFuniconal\bin\Debug\VCFramework.Entidad.dll
+C:\Cpas\Cpas\VCFramework.SitioWeb\VCFramework.EntidadFuniconal\bin\Debug\VCFramework.Entidad.pdb
+C:\Cpas\Cpas\VCFramework.SitioWeb\VCFramework.EntidadFuniconal\obj\Debug\VCFramework.EntidadFuniconal.csprojResolveAssemblyReference.cache
+C:\Cpas\Cpas\VCFramework.SitioWeb\VCFramework.EntidadFuniconal\obj\Debug\VCFramework.EntidadFuniconal.dll
+C:\Cpas\Cpas\VCFramework.SitioWeb\VCFramework.EntidadFuniconal\obj\Debug\VCFramework.EntidadFuniconal.pdb

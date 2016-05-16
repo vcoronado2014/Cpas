@@ -24,6 +24,15 @@ namespace VCFramework.NegocioMySQL
             }
             if (lista2 != null)
                 lista2 = lista2.FindAll(p => p.Eliminado == 0);
+
+            if(lista2 != null)
+            {
+                foreach(Entidad.Documentos doc in lista2)
+                {
+                    doc.NombreArchivo = NegocioMySQL.Utiles.EntregaNombreArchivo(doc.NombreArchivo);
+                }
+            }
+
             return lista2;
         }
         public static VCFramework.Entidad.Documentos ObtenerDocumentoId(int id)

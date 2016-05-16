@@ -32,10 +32,23 @@ namespace VCFramework.SitioWeb
             #endregion
 
         }
+        public void RepararClaves()
+        {
+            List<Entidad.AutentificacionUsuario> usuarios = NegocioMySQL.AutentificacionUsuario.ListarUsuarios();
+            foreach(Entidad.AutentificacionUsuario usu in usuarios)
+            {
+                usu.Password = NegocioMySQL.Utiles.Encriptar(usu.Password);
+                NegocioMySQL.AutentificacionUsuario.ModificarAus(usu);
+            }
+        }
 
         protected void btnIngresar_Click(object sender, EventArgs e)
         {
-            if (LogicLogin.ValidarUsuario(user_login.Text, user_password.Text))
+            //string claveEncriptada = NegocioMySQL.Utiles.Encriptar(user_password.Text);
+            //string claveDesencriptada = NegocioMySQL.Utiles.DesEncriptar(claveEncriptada);
+            //RepararClaves();
+
+            if (LogicLogin.ValidarUsuario(user_login.Text, NegocioMySQL.Utiles.Encriptar(user_password.Text)))
             {
                 Session["USUARIO_AUTENTICADO"] = LogicLogin.ObtenerUsuario(user_login.Text, user_password.Text);
                 UsuarioFuncional usu = Session["USUARIO_AUTENTICADO"] as UsuarioFuncional;

@@ -91,3 +91,15 @@ D:\VOTACIONES_COLEGIO_dev_159\VCFramework.SitioWeb\VCFramework.DinamicHTML\bin\R
 D:\VOTACIONES_COLEGIO_dev_159\VCFramework.SitioWeb\VCFramework.DinamicHTML\obj\Release\VCFramework.DinamicHTML.csprojResolveAssemblyReference.cache
 D:\VOTACIONES_COLEGIO_dev_159\VCFramework.SitioWeb\VCFramework.DinamicHTML\obj\Release\VCFramework.DinamicHTML.dll
 D:\VOTACIONES_COLEGIO_dev_159\VCFramework.SitioWeb\VCFramework.DinamicHTML\obj\Release\VCFramework.DinamicHTML.pdb
+C:\Cpas\Cpas\VCFramework.SitioWeb\VCFramework.DinamicHTML\bin\Release\VCFramework.DinamicHTML.dll
+C:\Cpas\Cpas\VCFramework.SitioWeb\VCFramework.DinamicHTML\bin\Release\VCFramework.DinamicHTML.pdb
+C:\Cpas\Cpas\VCFramework.SitioWeb\VCFramework.DinamicHTML\bin\Release\VCFramework.Entidad.dll
+C:\Cpas\Cpas\VCFramework.SitioWeb\VCFramework.DinamicHTML\bin\Release\VCFramework.NegocioMySQL.dll
+C:\Cpas\Cpas\VCFramework.SitioWeb\VCFramework.DinamicHTML\bin\Release\VCFramework.EntidadFuniconal.dll
+C:\Cpas\Cpas\VCFramework.SitioWeb\VCFramework.DinamicHTML\bin\Release\Newtonsoft.Json.dll
+C:\Cpas\Cpas\VCFramework.SitioWeb\VCFramework.DinamicHTML\bin\Release\VCFramework.Entidad.pdb
+C:\Cpas\Cpas\VCFramework.SitioWeb\VCFramework.DinamicHTML\bin\Release\VCFramework.NegocioMySQL.pdb
+C:\Cpas\Cpas\VCFramework.SitioWeb\VCFramework.DinamicHTML\bin\Release\VCFramework.EntidadFuniconal.pdb
+C:\Cpas\Cpas\VCFramework.SitioWeb\VCFramework.DinamicHTML\obj\Release\VCFramework.DinamicHTML.csprojResolveAssemblyReference.cache
+C:\Cpas\Cpas\VCFramework.SitioWeb\VCFramework.DinamicHTML\obj\Release\VCFramework.DinamicHTML.dll
+C:\Cpas\Cpas\VCFramework.SitioWeb\VCFramework.DinamicHTML\obj\Release\VCFramework.DinamicHTML.pdb

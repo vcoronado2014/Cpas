@@ -253,7 +253,7 @@ namespace VCFramework.SitioWeb.Administracion
                     aus.Modificado = false;
                     aus.NombreUsuario = item.NombreUsuario;
                     aus.Nuevo = true;
-                    aus.Password = clave;
+                    aus.Password = NegocioMySQL.Utiles.Encriptar(clave);
                     aus.RolId = 9;
                     aus.CorreoElectronico = item.Correo;
                     if (idRegion > 0 && idComuna > 0)
@@ -261,7 +261,7 @@ namespace VCFramework.SitioWeb.Administracion
                         VCFramework.NegocioMySQL.Factory fac = new NegocioMySQL.Factory();
                         if (fac.Insertar<VCFramework.Entidad.AutentificacionUsuario>(aus) > 0)
                         {
-                            Entidad.AutentificacionUsuario usuarioGuardado = VCFramework.NegocioMySQL.AutentificacionUsuario.ObtenerUsuario(aus.NombreUsuario, aus.Password);
+                            Entidad.AutentificacionUsuario usuarioGuardado = VCFramework.NegocioMySQL.AutentificacionUsuario.ObtenerUsuario(aus.NombreUsuario, NegocioMySQL.Utiles.DesEncriptar(aus.Password));
                             if (usuarioGuardado != null && usuarioGuardado.Id > 0)
                             {
                                 VCFramework.Entidad.Persona persona = new VCFramework.Entidad.Persona();

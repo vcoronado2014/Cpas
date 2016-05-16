@@ -4,11 +4,73 @@ using System.Linq;
 using System.Text;
 using System.IO;
 using System.Xml;
+using System.Security.Cryptography;
 
 namespace VCFramework.NegocioMySQL
 {
     public class Utiles
     {
+
+        public static string Encriptar(string _cadenaAencriptar)
+        {
+            string result = string.Empty;
+            byte[] encryted = System.Text.Encoding.Unicode.GetBytes(_cadenaAencriptar);
+            result = Convert.ToBase64String(encryted);
+            return result;
+        }
+
+        /// Esta función desencripta la cadena que le envíamos en el parámentro de entrada.
+        public static string DesEncriptar(string _cadenaAdesencriptar)
+        {
+            string result = string.Empty;
+            byte[] decryted = Convert.FromBase64String(_cadenaAdesencriptar);
+            //result = System.Text.Encoding.Unicode.GetString(decryted, 0, decryted.ToArray().Length);
+            result = System.Text.Encoding.Unicode.GetString(decryted);
+            return result;
+        }
+
+        //public static byte[] IV = Encoding.ASCII.GetBytes("Devjoker7.37hAES");
+
+        //public static string Encripta(string Cadena, string Password)
+        //{
+        //    byte[] Clave = Encoding.ASCII.GetBytes(Password);
+        //    byte[] inputBytes = Encoding.ASCII.GetBytes(Cadena);
+        //    byte[] encripted;
+        //    RijndaelManaged cripto = new RijndaelManaged();
+        //    using (MemoryStream ms = new MemoryStream(inputBytes.Length))
+        //    {
+        //        using (CryptoStream objCryptoStream = new CryptoStream(ms, cripto.CreateEncryptor(Clave, IV), CryptoStreamMode.Write))
+        //        {
+        //            objCryptoStream.Write(inputBytes, 0, inputBytes.Length);
+        //            objCryptoStream.FlushFinalBlock();
+        //            objCryptoStream.Close();
+        //        }
+        //        encripted = ms.ToArray();
+        //    }
+        //    return Convert.ToBase64String(encripted);
+        //}
+
+
+
+        //public static string Desencripta(string Cadena, string Password)
+        //{
+        //    byte[] Clave = Encoding.ASCII.GetBytes(Password);
+        //    byte[] inputBytes = Convert.FromBase64String(Cadena);
+        //    byte[] resultBytes = new byte[inputBytes.Length];
+        //    string textoLimpio = String.Empty;
+        //    RijndaelManaged cripto = new RijndaelManaged();
+        //    using (MemoryStream ms = new MemoryStream(inputBytes))
+        //    {
+        //        using (CryptoStream objCryptoStream = new CryptoStream(ms, cripto.CreateDecryptor(Clave, IV), CryptoStreamMode.Read))
+        //        {
+        //            using (StreamReader sr = new StreamReader(objCryptoStream, true))
+        //            {
+        //                textoLimpio = sr.ReadToEnd();
+        //            }
+        //        }
+        //    }
+        //    return textoLimpio;
+        //}
 
         // Connection String
         //public const string ConnStr =

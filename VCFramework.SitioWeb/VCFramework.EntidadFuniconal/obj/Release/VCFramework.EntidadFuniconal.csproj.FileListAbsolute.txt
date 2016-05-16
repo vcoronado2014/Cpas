@@ -47,3 +47,10 @@ D:\VOTACIONES_COLEGIO_dev_159\VCFramework.SitioWeb\VCFramework.EntidadFuniconal\
 D:\VOTACIONES_COLEGIO_dev_159\VCFramework.SitioWeb\VCFramework.EntidadFuniconal\obj\Release\VCFramework.EntidadFuniconal.csprojResolveAssemblyReference.cache
 D:\VOTACIONES_COLEGIO_dev_159\VCFramework.SitioWeb\VCFramework.EntidadFuniconal\obj\Release\VCFramework.EntidadFuniconal.dll
 D:\VOTACIONES_COLEGIO_dev_159\VCFramework.SitioWeb\VCFramework.EntidadFuniconal\obj\Release\VCFramework.EntidadFuniconal.pdb
+C:\Cpas\Cpas\VCFramework.SitioWeb\VCFramework.EntidadFuniconal\bin\Release\VCFramework.EntidadFuniconal.dll
+C:\Cpas\Cpas\VCFramework.SitioWeb\VCFramework.EntidadFuniconal\bin\Release\VCFramework.EntidadFuniconal.pdb
+C:\Cpas\Cpas\VCFramework.SitioWeb\VCFramework.EntidadFuniconal\bin\Release\VCFramework.Entidad.dll
+C:\Cpas\Cpas\VCFramework.SitioWeb\VCFramework.EntidadFuniconal\bin\Release\VCFramework.Entidad.pdb
+C:\Cpas\Cpas\VCFramework.SitioWeb\VCFramework.EntidadFuniconal\obj\Release\VCFramework.EntidadFuniconal.csprojResolveAssemblyReference.cache
+C:\Cpas\Cpas\VCFramework.SitioWeb\VCFramework.EntidadFuniconal\obj\Release\VCFramework.EntidadFuniconal.dll
+C:\Cpas\Cpas\VCFramework.SitioWeb\VCFramework.EntidadFuniconal\obj\Release\VCFramework.EntidadFuniconal.pdb

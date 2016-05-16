@@ -45,7 +45,8 @@ namespace VCFramework.NegocioMySQL
                 lista2 = lista.Cast<VCFramework.Entidad.Proyectos>().ToList();
             }
             if (lista2 != null)
-                lista2 = lista2.FindAll(p => p.Eliminado == 0 && p.FechaInicio >= fechaSistemaInicio && p.FechaTermino <= fechaSistemaTermino);
+                lista2 = lista2.FindAll(p => (p.Eliminado == 0) && (p.FechaInicio >= fechaSistemaInicio &&   fechaSistemaTermino <= p.FechaTermino));
+
             return lista2;
         }
 
@@ -77,7 +78,7 @@ namespace VCFramework.NegocioMySQL
                 lista2 = lista.Cast<VCFramework.Entidad.Proyectos>().ToList();
             }
             if (lista2 != null)
-                lista2 = lista2.FindAll(p => p.Eliminado == 0 && p.FechaInicio >= fechaSistemaInicio && p.FechaTermino <= fechaSistemaTermino);
+                lista2 = lista2.FindAll(p => (p.Eliminado == 0) && (p.FechaInicio >= fechaSistemaInicio && fechaSistemaTermino <= p.FechaTermino));
             return lista2;
         }
 

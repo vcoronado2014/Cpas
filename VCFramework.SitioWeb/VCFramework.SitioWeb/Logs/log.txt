@@ -108,4 +108,19 @@ Nombre del parámetro: index</Detalle>
     <Detalle>Referencia a objeto no establecida como instancia de un objeto.</Detalle>
     <Id>21</Id>
   </error>
+  <error>
+    <Fecha>2016-05-15 19:05</Fecha>
+    <Detalle>Referencia a objeto no establecida como instancia de un objeto.</Detalle>
+    <Id>22</Id>
+  </error>
+  <error>
+    <Fecha>2016-05-15 21:10</Fecha>
+    <Detalle>Referencia a objeto no establecida como instancia de un objeto.</Detalle>
+    <Id>23</Id>
+  </error>
+  <error>
+    <Fecha>2016-05-15 21:13</Fecha>
+    <Detalle>Referencia a objeto no establecida como instancia de un objeto.</Detalle>
+    <Id>24</Id>
+  </error>
 </root>

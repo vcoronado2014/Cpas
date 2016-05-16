@@ -82,3 +82,13 @@ C:\VOTACIONES_COLEGIO_dev_159\VCFramework.SitioWeb\VCFramework.NegocioMySQL\bin\
 C:\VOTACIONES_COLEGIO_dev_159\VCFramework.SitioWeb\VCFramework.NegocioMySQL\obj\Debug\VCFramework.NegocioMySQL.csprojResolveAssemblyReference.cache
 C:\VOTACIONES_COLEGIO_dev_159\VCFramework.SitioWeb\VCFramework.NegocioMySQL\obj\Debug\VCFramework.NegocioMySQL.dll
 C:\VOTACIONES_COLEGIO_dev_159\VCFramework.SitioWeb\VCFramework.NegocioMySQL\obj\Debug\VCFramework.NegocioMySQL.pdb
+C:\Cpas\Cpas\VCFramework.SitioWeb\VCFramework.NegocioMySQL\bin\Debug\VCFramework.NegocioMySQL.dll
+C:\Cpas\Cpas\VCFramework.SitioWeb\VCFramework.NegocioMySQL\bin\Debug\VCFramework.NegocioMySQL.pdb
+C:\Cpas\Cpas\VCFramework.SitioWeb\VCFramework.NegocioMySQL\bin\Debug\Newtonsoft.Json.dll
+C:\Cpas\Cpas\VCFramework.SitioWeb\VCFramework.NegocioMySQL\bin\Debug\VCFramework.Entidad.dll
+C:\Cpas\Cpas\VCFramework.SitioWeb\VCFramework.NegocioMySQL\bin\Debug\VCFramework.EntidadFuniconal.dll
+C:\Cpas\Cpas\VCFramework.SitioWeb\VCFramework.NegocioMySQL\bin\Debug\VCFramework.EntidadFuniconal.pdb
+C:\Cpas\Cpas\VCFramework.SitioWeb\VCFramework.NegocioMySQL\bin\Debug\VCFramework.Entidad.pdb
+C:\Cpas\Cpas\VCFramework.SitioWeb\VCFramework.NegocioMySQL\obj\Debug\VCFramework.NegocioMySQL.csprojResolveAssemblyReference.cache
+C:\Cpas\Cpas\VCFramework.SitioWeb\VCFramework.NegocioMySQL\obj\Debug\VCFramework.NegocioMySQL.dll
+C:\Cpas\Cpas\VCFramework.SitioWeb\VCFramework.NegocioMySQL\obj\Debug\VCFramework.NegocioMySQL.pdb

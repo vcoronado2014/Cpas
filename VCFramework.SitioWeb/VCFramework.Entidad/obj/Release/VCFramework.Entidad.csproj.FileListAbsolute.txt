@@ -23,3 +23,8 @@ C:\VOTACIONES_COLEGIO_dev_159\VCFramework.SitioWeb\VCFramework.Entidad\bin\Relea
 C:\VOTACIONES_COLEGIO_dev_159\VCFramework.SitioWeb\VCFramework.Entidad\obj\Release\VCFramework.Entidad.csprojResolveAssemblyReference.cache
 C:\VOTACIONES_COLEGIO_dev_159\VCFramework.SitioWeb\VCFramework.Entidad\obj\Release\VCFramework.Entidad.dll
 C:\VOTACIONES_COLEGIO_dev_159\VCFramework.SitioWeb\VCFramework.Entidad\obj\Release\VCFramework.Entidad.pdb
+C:\Cpas\Cpas\VCFramework.SitioWeb\VCFramework.Entidad\bin\Release\VCFramework.Entidad.dll
+C:\Cpas\Cpas\VCFramework.SitioWeb\VCFramework.Entidad\bin\Release\VCFramework.Entidad.pdb
+C:\Cpas\Cpas\VCFramework.SitioWeb\VCFramework.Entidad\obj\Release\VCFramework.Entidad.csprojResolveAssemblyReference.cache
+C:\Cpas\Cpas\VCFramework.SitioWeb\VCFramework.Entidad\obj\Release\VCFramework.Entidad.dll
+C:\Cpas\Cpas\VCFramework.SitioWeb\VCFramework.Entidad\obj\Release\VCFramework.Entidad.pdb

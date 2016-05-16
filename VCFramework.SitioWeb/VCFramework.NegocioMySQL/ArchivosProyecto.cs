@@ -32,6 +32,7 @@ namespace VCFramework.NegocioMySQL
                 }
                 if (lista2 != null)
                     lista2 = lista2.FindAll(p => p.Eliminado == 0);
+
                 return lista2;
             }
         }
