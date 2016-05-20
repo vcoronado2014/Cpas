@@ -73,6 +73,8 @@ table {
     border: solid 1px #DDDDDD;
     margin-bottom: 0;
     table-layout: auto;
+    border:none;
+    border-spacing: 0;
 }
 .dxgvHeader, .dxgvHeader table {
     color: #222222;

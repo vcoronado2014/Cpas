@@ -54,3 +54,10 @@ C:\Cpas\Cpas\VCFramework.SitioWeb\VCFramework.EntidadFuniconal\bin\Release\VCFra
 C:\Cpas\Cpas\VCFramework.SitioWeb\VCFramework.EntidadFuniconal\obj\Release\VCFramework.EntidadFuniconal.csprojResolveAssemblyReference.cache
 C:\Cpas\Cpas\VCFramework.SitioWeb\VCFramework.EntidadFuniconal\obj\Release\VCFramework.EntidadFuniconal.dll
 C:\Cpas\Cpas\VCFramework.SitioWeb\VCFramework.EntidadFuniconal\obj\Release\VCFramework.EntidadFuniconal.pdb
+C:\CPAS_CLAVE\Cpas\VCFramework.SitioWeb\VCFramework.EntidadFuniconal\bin\Release\VCFramework.EntidadFuniconal.dll
+C:\CPAS_CLAVE\Cpas\VCFramework.SitioWeb\VCFramework.EntidadFuniconal\bin\Release\VCFramework.EntidadFuniconal.pdb
+C:\CPAS_CLAVE\Cpas\VCFramework.SitioWeb\VCFramework.EntidadFuniconal\bin\Release\VCFramework.Entidad.dll
+C:\CPAS_CLAVE\Cpas\VCFramework.SitioWeb\VCFramework.EntidadFuniconal\bin\Release\VCFramework.Entidad.pdb
+C:\CPAS_CLAVE\Cpas\VCFramework.SitioWeb\VCFramework.EntidadFuniconal\obj\Release\VCFramework.EntidadFuniconal.csprojResolveAssemblyReference.cache
+C:\CPAS_CLAVE\Cpas\VCFramework.SitioWeb\VCFramework.EntidadFuniconal\obj\Release\VCFramework.EntidadFuniconal.dll
+C:\CPAS_CLAVE\Cpas\VCFramework.SitioWeb\VCFramework.EntidadFuniconal\obj\Release\VCFramework.EntidadFuniconal.pdb

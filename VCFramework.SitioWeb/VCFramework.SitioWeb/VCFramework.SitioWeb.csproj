@@ -53,6 +53,7 @@
     <Reference Include="DevExpress.Sparkline.v15.2.Core, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.SpellChecker.v15.2.Core, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Spreadsheet.v15.2.Core, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v15.2, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Web.ASPxHtmlEditor.v15.2, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Web.ASPxScheduler.v15.2, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Web.ASPxSpellChecker.v15.2, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
@@ -63,6 +64,7 @@
     <Reference Include="DevExpress.XtraCharts.v15.2, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraGauges.v15.2.Core, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.CodeParser.v15.2, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPrinting.v15.2, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraReports.v15.2, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraReports.v15.2.Web, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraScheduler.v15.2.Core, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
@@ -104,6 +106,7 @@
     <Content Include="Administracion\EditorEncabezado.aspx" />
     <Content Include="Administracion\IngresoEgreso.aspx" />
     <Content Include="Administracion\ListadoCursos.aspx" />
+    <Content Include="Administracion\Monitoreo.aspx" />
     <Content Include="Administracion\movimientoEditar.aspx" />
     <Content Include="Administracion\usuarioEditar.aspx" />
     <Content Include="Administracion\Usuarios.aspx" />
@@ -116,8 +119,10 @@
     <Content Include="controles\icoAlerta.png" />
     <Content Include="controles\icoError.jpg" />
     <Content Include="controles\icoOk.jpg" />
+    <Content Include="controles\VerticalAppointment.ascx" />
     <Content Include="controles\vistaMensaje.ascx" />
     <Content Include="css\chartist.min.css" />
+    <Content Include="css\default.css" />
     <Content Include="css\foundation-icons.css" />
     <Content Include="css\foundation.css" />
     <Content Include="css\foundation.min.css" />
@@ -271,7 +276,9 @@
     <Content Include="js\widgets\window.js" />
     <Content Include="js\widgets\wizard.js" />
     <Content Include="js\widgets\wizard2.js" />
-    <Content Include="Mensajes.xml" />
+    <Content Include="Mensajes.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Proyectos\CrearProyecto.aspx" />
     <Content Include="Proyectos\Listado.aspx" />
     <Content Include="Proyectos\VotarProyecto.aspx" />
@@ -369,6 +376,13 @@
     <Compile Include="Administracion\ListadoCursos.aspx.designer.cs">
       <DependentUpon>ListadoCursos.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Administracion\Monitoreo.aspx.cs">
+      <DependentUpon>Monitoreo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administracion\Monitoreo.aspx.designer.cs">
+      <DependentUpon>Monitoreo.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Administracion\movimientoEditar.aspx.cs">
       <DependentUpon>movimientoEditar.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -413,6 +427,13 @@
     </Compile>
     <Compile Include="controles\controlVistaDocumentosUsuario.ascx.designer.cs">
       <DependentUpon>controlVistaDocumentosUsuario.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="controles\VerticalAppointment.ascx.cs">
+      <DependentUpon>VerticalAppointment.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="controles\VerticalAppointment.ascx.designer.cs">
+      <DependentUpon>VerticalAppointment.ascx</DependentUpon>
     </Compile>
     <Compile Include="controles\vistaMensaje.ascx.cs">
       <DependentUpon>vistaMensaje.ascx</DependentUpon>

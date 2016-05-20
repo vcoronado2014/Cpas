@@ -103,3 +103,15 @@ C:\Cpas\Cpas\VCFramework.SitioWeb\VCFramework.DinamicHTML\bin\Release\VCFramewor
 C:\Cpas\Cpas\VCFramework.SitioWeb\VCFramework.DinamicHTML\obj\Release\VCFramework.DinamicHTML.csprojResolveAssemblyReference.cache
 C:\Cpas\Cpas\VCFramework.SitioWeb\VCFramework.DinamicHTML\obj\Release\VCFramework.DinamicHTML.dll
 C:\Cpas\Cpas\VCFramework.SitioWeb\VCFramework.DinamicHTML\obj\Release\VCFramework.DinamicHTML.pdb
+C:\CPAS_CLAVE\Cpas\VCFramework.SitioWeb\VCFramework.DinamicHTML\bin\Release\VCFramework.DinamicHTML.dll
+C:\CPAS_CLAVE\Cpas\VCFramework.SitioWeb\VCFramework.DinamicHTML\bin\Release\VCFramework.DinamicHTML.pdb
+C:\CPAS_CLAVE\Cpas\VCFramework.SitioWeb\VCFramework.DinamicHTML\bin\Release\VCFramework.Entidad.dll
+C:\CPAS_CLAVE\Cpas\VCFramework.SitioWeb\VCFramework.DinamicHTML\bin\Release\VCFramework.NegocioMySQL.dll
+C:\CPAS_CLAVE\Cpas\VCFramework.SitioWeb\VCFramework.DinamicHTML\bin\Release\VCFramework.EntidadFuniconal.dll
+C:\CPAS_CLAVE\Cpas\VCFramework.SitioWeb\VCFramework.DinamicHTML\bin\Release\Newtonsoft.Json.dll
+C:\CPAS_CLAVE\Cpas\VCFramework.SitioWeb\VCFramework.DinamicHTML\bin\Release\VCFramework.Entidad.pdb
+C:\CPAS_CLAVE\Cpas\VCFramework.SitioWeb\VCFramework.DinamicHTML\bin\Release\VCFramework.NegocioMySQL.pdb
+C:\CPAS_CLAVE\Cpas\VCFramework.SitioWeb\VCFramework.DinamicHTML\bin\Release\VCFramework.EntidadFuniconal.pdb
+C:\CPAS_CLAVE\Cpas\VCFramework.SitioWeb\VCFramework.DinamicHTML\obj\Release\VCFramework.DinamicHTML.csprojResolveAssemblyReference.cache
+C:\CPAS_CLAVE\Cpas\VCFramework.SitioWeb\VCFramework.DinamicHTML\obj\Release\VCFramework.DinamicHTML.dll
+C:\CPAS_CLAVE\Cpas\VCFramework.SitioWeb\VCFramework.DinamicHTML\obj\Release\VCFramework.DinamicHTML.pdb

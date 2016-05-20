@@ -46,3 +46,7 @@ C:\Cpas\Cpas\VCFramework.SitioWeb\VCFramework.Entidad\bin\Debug\VCFramework.Enti
 C:\Cpas\Cpas\VCFramework.SitioWeb\VCFramework.Entidad\obj\Debug\VCFramework.Entidad.csprojResolveAssemblyReference.cache
 C:\Cpas\Cpas\VCFramework.SitioWeb\VCFramework.Entidad\obj\Debug\VCFramework.Entidad.dll
 C:\Cpas\Cpas\VCFramework.SitioWeb\VCFramework.Entidad\obj\Debug\VCFramework.Entidad.pdb
+C:\CPAS_CLAVE\Cpas\VCFramework.SitioWeb\VCFramework.Entidad\bin\Debug\VCFramework.Entidad.dll
+C:\CPAS_CLAVE\Cpas\VCFramework.SitioWeb\VCFramework.Entidad\bin\Debug\VCFramework.Entidad.pdb
+C:\CPAS_CLAVE\Cpas\VCFramework.SitioWeb\VCFramework.Entidad\obj\Debug\VCFramework.Entidad.dll
+C:\CPAS_CLAVE\Cpas\VCFramework.SitioWeb\VCFramework.Entidad\obj\Debug\VCFramework.Entidad.pdb
