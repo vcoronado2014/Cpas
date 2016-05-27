@@ -96,5 +96,10 @@ namespace VCFramework.SitioWeb.Usuario
         {
             e.Container = new AppointmentFormTemplateContainer((ASPxScheduler)sender);
         }
+
+        protected void ASPxScheduler1_AppointmentViewInfoCustomizing(object sender, AppointmentViewInfoCustomizingEventArgs e)
+        {
+
+        }
     }
 }

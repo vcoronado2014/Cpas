@@ -10,16 +10,16 @@
 namespace VCFramework.SitioWeb.controles {
     
     
-    public partial class VerticalAppointment {
+    public partial class HorizontalAppointment {
         
         /// <summary>
-        /// lblHeader control.
+        /// startTimeClockContainer control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblHeader;
+        protected global::System.Web.UI.HtmlControls.HtmlTableCell startTimeClockContainer;
         
         /// <summary>
         /// lblSubject control.
@@ -40,12 +40,12 @@ namespace VCFramework.SitioWeb.controles {
         protected global::System.Web.UI.WebControls.Label lblLocation;
         
         /// <summary>
-        /// lblDescription control.
+        /// endTimeClockContainer control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblDescription;
+        protected global::System.Web.UI.HtmlControls.HtmlTableCell endTimeClockContainer;
     }
 }

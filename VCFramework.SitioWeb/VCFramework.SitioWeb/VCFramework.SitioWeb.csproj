@@ -116,6 +116,7 @@
     <Content Include="controles\controlVistaDocumentos.ascx" />
     <Content Include="controles\controlVistaDocumentosUsuario.ascx" />
     <Content Include="controles\controlVistaRendiciones.ascx" />
+    <Content Include="controles\HorizontalAppointment.ascx" />
     <Content Include="controles\icoAlerta.png" />
     <Content Include="controles\icoError.jpg" />
     <Content Include="controles\icoOk.jpg" />
@@ -427,6 +428,13 @@
     </Compile>
     <Compile Include="controles\controlVistaDocumentosUsuario.ascx.designer.cs">
       <DependentUpon>controlVistaDocumentosUsuario.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="controles\HorizontalAppointment.ascx.cs">
+      <DependentUpon>HorizontalAppointment.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="controles\HorizontalAppointment.ascx.designer.cs">
+      <DependentUpon>HorizontalAppointment.ascx</DependentUpon>
     </Compile>
     <Compile Include="controles\VerticalAppointment.ascx.cs">
       <DependentUpon>VerticalAppointment.ascx</DependentUpon>
