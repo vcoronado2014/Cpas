@@ -2,20 +2,24 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using VCFramework.Negocio.Factory;
 
 namespace VCFramework.NegocioMySQL
 {
     public class DocumentosUsuario
     {
+        public static System.Configuration.ConnectionStringSettings setCns = System.Web.Configuration.WebConfigurationManager.ConnectionStrings["BDColegioSql"];
+        public static System.Configuration.ConnectionStringSettings setCnsWebLun = System.Web.Configuration.WebConfigurationManager.ConnectionStrings["MSUsuarioLunConectionString"];
+
         public static List<VCFramework.Entidad.DocumentosUsuario> ObtenerDocumentosPorInstId(int instId)
         {
-            VCFramework.NegocioMySQL.Factory fac = new VCFramework.NegocioMySQL.Factory();
+            Factory fac = new Factory();
             FiltroGenerico filtro = new FiltroGenerico();
             filtro.Campo = "INST_ID";
             filtro.Valor = instId.ToString();
             filtro.TipoDato = TipoDatoGeneral.Entero;
 
-            List<object> lista = fac.Leer<VCFramework.Entidad.DocumentosUsuario>(filtro);
+            List<object> lista = fac.Leer<VCFramework.Entidad.DocumentosUsuario>(filtro, setCns);
             List<VCFramework.Entidad.DocumentosUsuario> lista2 = new List<VCFramework.Entidad.DocumentosUsuario>();
             if (lista != null)
             {
@@ -37,13 +41,13 @@ namespace VCFramework.NegocioMySQL
         public static VCFramework.Entidad.DocumentosUsuario ObtenerDocumentoId(int id)
         {
             VCFramework.Entidad.DocumentosUsuario retorno = new Entidad.DocumentosUsuario();
-            VCFramework.NegocioMySQL.Factory fac = new VCFramework.NegocioMySQL.Factory();
+            Factory fac = new Factory();
             FiltroGenerico filtro = new FiltroGenerico();
             filtro.Campo = "ID";
             filtro.Valor = id.ToString();
             filtro.TipoDato = TipoDatoGeneral.Entero;
 
-            List<object> lista = fac.Leer<VCFramework.Entidad.DocumentosUsuario>(filtro);
+            List<object> lista = fac.Leer<VCFramework.Entidad.DocumentosUsuario>(filtro, setCns);
             List<VCFramework.Entidad.DocumentosUsuario> lista2 = new List<VCFramework.Entidad.DocumentosUsuario>();
             if (lista != null)
             {

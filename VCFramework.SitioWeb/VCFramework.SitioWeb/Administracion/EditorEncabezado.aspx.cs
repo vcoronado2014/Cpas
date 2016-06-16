@@ -5,11 +5,15 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using VCFramework.Negocio.Factory;
 
 namespace VCFramework.SitioWeb.Administracion
 {
     public partial class EditorEncabezado : System.Web.UI.Page
     {
+        public static System.Configuration.ConnectionStringSettings setCns = System.Web.Configuration.WebConfigurationManager.ConnectionStrings["BDColegioSql"];
+        public static System.Configuration.ConnectionStringSettings setCnsWebLun = System.Web.Configuration.WebConfigurationManager.ConnectionStrings["MSUsuarioLunConectionString"];
+
         const string BITMAP_ID_BLOCK = "BM";
         const string JPG_ID_BLOCK = "\u00FF\u00D8\u00FF";
         const string PNG_ID_BLOCK = "\u0089PNG\r\n\u001a\n";
@@ -273,9 +277,9 @@ namespace VCFramework.SitioWeb.Administracion
                         config.Nuevo = false;
                         config.Modificado = true;
 
-                        NegocioMySQL.Factory fac = new NegocioMySQL.Factory();
+                        Factory fac = new Factory();
 
-                        fac.Update<Entidad.ConfiguracionInstitucion>(config);
+                        fac.Update<Entidad.ConfiguracionInstitucion>(config, setCns);
                     }
 
                     vistaMensaje1.MostrarMensaje(SitioWeb.EstiloMensaje.Ok, true, false, "Guardado Exitosamente.", "");

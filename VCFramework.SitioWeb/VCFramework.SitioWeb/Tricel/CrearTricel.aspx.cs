@@ -8,11 +8,15 @@ using System.IO;
 using DevExpress.Web;
 using System.Net.Mail;
 using System.Text;
+using VCFramework.Negocio.Factory;
 
 namespace VCFramework.SitioWeb.Tricel
 {
     public partial class CrearTricel : System.Web.UI.Page
     {
+        public static System.Configuration.ConnectionStringSettings setCns = System.Web.Configuration.WebConfigurationManager.ConnectionStrings["BDColegioSql"];
+        public static System.Configuration.ConnectionStringSettings setCnsWebLun = System.Web.Configuration.WebConfigurationManager.ConnectionStrings["MSUsuarioLunConectionString"];
+
         protected void Page_Load(object sender, EventArgs e)
         {
             #region validacion usuario
@@ -159,8 +163,8 @@ namespace VCFramework.SitioWeb.Tricel
                     entidadEli.Nuevo = false;
                     entidadEli.Modificado = true;
                     entidadEli.Eliminado = 1;
-                    VCFramework.NegocioMySQL.Factory fac = new NegocioMySQL.Factory();
-                    if (fac.Update<VCFramework.Entidad.Tricel>(entidadEli) > 0)
+                    Factory fac = new Factory();
+                    if (fac.Update<VCFramework.Entidad.Tricel>(entidadEli, setCns) > 0)
                     {
                         //modificamos al calendario
                         #region modificar calendario
@@ -180,7 +184,7 @@ namespace VCFramework.SitioWeb.Tricel
                             cal.Nuevo = false;
                             cal.Modificado = true;
                             cal.Borrado = false;
-                            fac.Update<Entidad.Calendario>(cal);
+                            fac.Update<Entidad.Calendario>(cal, setCns);
                         }
                         #endregion
                         List<Entidad.ArchivosTricel> archivos = NegocioMySQL.ArchivosTricel.ObtenerArchivosPorTricelId(id, null);
@@ -192,7 +196,7 @@ namespace VCFramework.SitioWeb.Tricel
                                 arc.Eliminado = 1;
                                 arc.Nuevo = false;
                                 arc.Modificado = true;
-                                fac.Update<Entidad.ArchivosTricel>(arc);
+                                fac.Update<Entidad.ArchivosTricel>(arc, setCns);
 
 
 
@@ -324,8 +328,8 @@ namespace VCFramework.SitioWeb.Tricel
 
             //aca hay que trabajar con la lista de archivos
 
-            NegocioMySQL.Factory fac = new NegocioMySQL.Factory();
-            int ID_TRICEL = fac.Insertar<Entidad.Tricel>(entidad);
+            Factory fac = new Factory();
+            int ID_TRICEL = fac.Insertar<Entidad.Tricel>(entidad, setCns);
 
             if (ID_TRICEL > 0)
             {
@@ -351,7 +355,7 @@ namespace VCFramework.SitioWeb.Tricel
                 calendario.Tipo = 1;
                 #endregion
 
-                fac.Insertar<Entidad.Calendario>(calendario);
+                fac.Insertar<Entidad.Calendario>(calendario, setCns);
 
                 if (Session["LISTA_SESION_TRI"] != null)
                 {
@@ -374,7 +378,7 @@ namespace VCFramework.SitioWeb.Tricel
                                 arc.Modificado = false;
                                 arc.Nuevo = true;
                                 arc.TriId = ID_TRICEL;
-                                fac.Insertar<Entidad.ArchivosTricel>(arc);
+                                fac.Insertar<Entidad.ArchivosTricel>(arc, setCns);
                             }
                         }
                     }
@@ -492,9 +496,9 @@ namespace VCFramework.SitioWeb.Tricel
 
                 entidad.Nuevo = false;
 
-                NegocioMySQL.Factory fac = new NegocioMySQL.Factory();
+                Factory fac = new Factory();
 
-                if (fac.Update<Entidad.Tricel>(entidad) > 0)
+                if (fac.Update<Entidad.Tricel>(entidad, setCns) > 0)
                 {
 
                     //modificamos al calendario
@@ -518,7 +522,7 @@ namespace VCFramework.SitioWeb.Tricel
                         cal.Modificado = true;
                         cal.Borrado = false;
                         cal.Titulo = entidad.Nombre;
-                        fac.Update<Entidad.Calendario>(cal);
+                        fac.Update<Entidad.Calendario>(cal, setCns);
 
                     }
                     #endregion
@@ -619,8 +623,8 @@ namespace VCFramework.SitioWeb.Tricel
                     arc.Nuevo = true;
                     arc.Modificado = false;
                     arc.Borrado = false;
-                    NegocioMySQL.Factory fac = new NegocioMySQL.Factory();
-                    fac.Insertar<Entidad.ArchivosTricel>(arc);
+                    Factory fac = new Factory();
+                    fac.Insertar<Entidad.ArchivosTricel>(arc, setCns);
                     ODSLISTADO.DataBind();
                     grillaDocumentos.DataBind();
 
@@ -742,8 +746,8 @@ namespace VCFramework.SitioWeb.Tricel
                         archivo.Nuevo = false;
                         archivo.Modificado = true;
                         archivo.Eliminado = 1;
-                        NegocioMySQL.Factory fac = new NegocioMySQL.Factory();
-                        fac.Update<Entidad.ArchivosTricel>(archivo);
+                        Factory fac = new Factory();
+                        fac.Update<Entidad.ArchivosTricel>(archivo, setCns);
                     }
                 }
                 ODSLISTADO.DataBind();

@@ -3,11 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Runtime.Caching;
+using VCFramework.Negocio.Factory;
 
 namespace VCFramework.NegocioMySQL
 {
     public class GrupoItem
     {
+        public static System.Configuration.ConnectionStringSettings setCns = System.Web.Configuration.WebConfigurationManager.ConnectionStrings["BDColegioSql"];
+        public static System.Configuration.ConnectionStringSettings setCnsWebLun = System.Web.Configuration.WebConfigurationManager.ConnectionStrings["MSUsuarioLunConectionString"];
+
         static ObjectCache cache = MemoryCache.Default;
         private static List<VCFramework.Entidad.GrupoItem> fileContents = cache["fileContentsGrupoItem"] as List<VCFramework.Entidad.GrupoItem>;
         //este esta en días
@@ -16,12 +20,12 @@ namespace VCFramework.NegocioMySQL
 
         public static List<VCFramework.Entidad.GrupoItem> ListarGrupos()
         {
-            VCFramework.NegocioMySQL.Factory fac = new VCFramework.NegocioMySQL.Factory();
+            Factory fac = new Factory();
             List<VCFramework.Entidad.GrupoItem> lista2 = new List<VCFramework.Entidad.GrupoItem>();
 
             if (fileContents == null)
             {
-                List<object> lista = fac.Leer<VCFramework.Entidad.GrupoItem>();
+                List<object> lista = fac.Leer<VCFramework.Entidad.GrupoItem>(setCns);
 
                 if (lista != null)
                 {

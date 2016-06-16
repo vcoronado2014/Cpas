@@ -5,11 +5,15 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Text;
+using VCFramework.Negocio.Factory;
 
 namespace VCFramework.SitioWeb.Tricel
 {
     public partial class VotarLista : System.Web.UI.Page
     {
+        public static System.Configuration.ConnectionStringSettings setCns = System.Web.Configuration.WebConfigurationManager.ConnectionStrings["BDColegioSql"];
+        public static System.Configuration.ConnectionStringSettings setCnsWebLun = System.Web.Configuration.WebConfigurationManager.ConnectionStrings["MSUsuarioLunConectionString"];
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!Page.IsPostBack)
@@ -148,10 +152,10 @@ namespace VCFramework.SitioWeb.Tricel
                 voto.LtrId = int.Parse(Request.QueryString["Lst_id"].ToString());
                 voto.UsuIdVotador = usu.AutentificacionUsuario.Id;
                 voto.TriId = int.Parse(Session["TRI_ID"].ToString());
-                NegocioMySQL.Factory fac = new NegocioMySQL.Factory();
+                Factory fac = new Factory();
                 try
                 {
-                    int idVoto = fac.Insertar<Entidad.VotTricel>(voto);
+                    int idVoto = fac.Insertar<Entidad.VotTricel>(voto, setCns);
 
                     if (idVoto > 0)
                     {

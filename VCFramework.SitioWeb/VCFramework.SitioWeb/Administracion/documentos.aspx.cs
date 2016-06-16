@@ -7,11 +7,15 @@ using System.Web.UI.WebControls;
 using System.IO;
 using DevExpress.Web;
 using System.Net.Mail;
+using VCFramework.Negocio.Factory;
 
 namespace VCFramework.SitioWeb.Administracion
 {
     public partial class documentos : System.Web.UI.Page
     {
+        public static System.Configuration.ConnectionStringSettings setCns = System.Web.Configuration.WebConfigurationManager.ConnectionStrings["BDColegioSql"];
+        public static System.Configuration.ConnectionStringSettings setCnsWebLun = System.Web.Configuration.WebConfigurationManager.ConnectionStrings["MSUsuarioLunConectionString"];
+
         protected void Page_Load(object sender, EventArgs e)
         {
             UsuarioFuncional usu = new UsuarioFuncional();
@@ -102,8 +106,8 @@ namespace VCFramework.SitioWeb.Administracion
             documento.UsuId = int.Parse(Session["USU_ID"].ToString());
             documento.FechaSubida = fechaSubida;
             documento.Extension = urlExtension;
-            VCFramework.NegocioMySQL.Factory fac = new NegocioMySQL.Factory();
-            if (fac.Insertar<VCFramework.Entidad.Documentos>(documento) > 0)
+            Factory fac = new Factory();
+            if (fac.Insertar<VCFramework.Entidad.Documentos>(documento, setCns) > 0)
             {
                 //ahora enviamos correo
                 if (NegocioMySQL.Utiles.ENVIA_DOCUMENTOS(documento.InstId) == "1")
@@ -166,8 +170,8 @@ namespace VCFramework.SitioWeb.Administracion
                         doc.Nuevo = false;
                         doc.Borrado = false;
                         doc.Eliminado = 1;
-                        VCFramework.NegocioMySQL.Factory fac = new NegocioMySQL.Factory();
-                        if (fac.Update<VCFramework.Entidad.Documentos>(doc) > 0)
+                        Factory fac = new Factory();
+                        if (fac.Update<VCFramework.Entidad.Documentos>(doc, setCns) > 0)
                         {
                             //ahora enviamos correo
                             if (NegocioMySQL.Utiles.ENVIA_DOCUMENTOS(doc.InstId) == "1")

@@ -95,6 +95,10 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\ThemeAssemblyMulberry.dll</HintPath>
     </Reference>
+    <Reference Include="VCFramework.Negocio.Factory, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>E:\VCFramework\VCFramework.Negocio.Factory\VCFramework.Negocio.Factory\bin\Debug\VCFramework.Negocio.Factory.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Administracion\cargaMasiva.aspx" />

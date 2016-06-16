@@ -4,11 +4,15 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using VCFramework.Negocio.Factory;
 
 namespace VCFramework.SitioWeb.Administracion
 {
     public partial class cursoEditar : System.Web.UI.Page
     {
+        public static System.Configuration.ConnectionStringSettings setCns = System.Web.Configuration.WebConfigurationManager.ConnectionStrings["BDColegioSql"];
+        public static System.Configuration.ConnectionStringSettings setCnsWebLun = System.Web.Configuration.WebConfigurationManager.ConnectionStrings["MSUsuarioLunConectionString"];
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!Page.IsPostBack)

@@ -4,11 +4,15 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using VCFramework.Negocio.Factory;
 
 namespace VCFramework.SitioWeb.Proyectos
 {
     public partial class VotarProyecto : System.Web.UI.Page
     {
+        public static System.Configuration.ConnectionStringSettings setCns = System.Web.Configuration.WebConfigurationManager.ConnectionStrings["BDColegioSql"];
+        public static System.Configuration.ConnectionStringSettings setCnsWebLun = System.Web.Configuration.WebConfigurationManager.ConnectionStrings["MSUsuarioLunConectionString"];
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!Page.IsPostBack)
@@ -118,8 +122,8 @@ namespace VCFramework.SitioWeb.Proyectos
                 voto.ProId = int.Parse(hidId.Value.ToString());
                 voto.UsuIdVotador = usu.AutentificacionUsuario.Id;
                 voto.Valor = valor;
-                NegocioMySQL.Factory fac = new NegocioMySQL.Factory();
-                fac.Insertar<Entidad.Votaciones>(voto);
+                Factory fac = new Factory();
+                fac.Insertar<Entidad.Votaciones>(voto, setCns);
                 lblIngresosEgresos.Text = VCFramework.NegocioMySQL.Votaciones.SumaVotaciones(voto.ProId);
                 Recuperar(voto.ProId);
                 

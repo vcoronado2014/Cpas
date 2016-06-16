@@ -7,11 +7,15 @@ using System.Web.UI.WebControls;
 using System.IO;
 using DevExpress.Web;
 using System.Net.Mail;
+using VCFramework.Negocio.Factory;
 
 namespace VCFramework.SitioWeb.Proyectos
 {
     public partial class CrearProyecto : System.Web.UI.Page
     {
+        public static System.Configuration.ConnectionStringSettings setCns = System.Web.Configuration.WebConfigurationManager.ConnectionStrings["BDColegioSql"];
+        public static System.Configuration.ConnectionStringSettings setCnsWebLun = System.Web.Configuration.WebConfigurationManager.ConnectionStrings["MSUsuarioLunConectionString"];
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!Page.IsPostBack)
@@ -137,8 +141,8 @@ namespace VCFramework.SitioWeb.Proyectos
                     entidadEli.Nuevo = false;
                     entidadEli.Modificado = true;
                     entidadEli.Eliminado = 1;
-                    VCFramework.NegocioMySQL.Factory fac = new NegocioMySQL.Factory();
-                    if (fac.Update<VCFramework.Entidad.Proyectos>(entidadEli) > 0)
+                    Factory fac = new Factory();
+                    if (fac.Update<VCFramework.Entidad.Proyectos>(entidadEli, setCns) > 0)
                     {
                         //modificamos al calendario
                         #region modificar calendario
@@ -158,7 +162,7 @@ namespace VCFramework.SitioWeb.Proyectos
                             cal.Nuevo = false;
                             cal.Modificado = true;
                             cal.Borrado = false;
-                            fac.Update<Entidad.Calendario>(cal);
+                            fac.Update<Entidad.Calendario>(cal, setCns);
                         }
                         #endregion
                         List<Entidad.ArchivosProyecto> archivos = NegocioMySQL.ArchivosProyecto.ObtenerArchivosPorProyectoId(id, null);
@@ -170,7 +174,7 @@ namespace VCFramework.SitioWeb.Proyectos
                                 arc.Eliminado = 1;
                                 arc.Nuevo = false;
                                 arc.Modificado = true;
-                                fac.Update<Entidad.ArchivosProyecto>(arc);
+                                fac.Update<Entidad.ArchivosProyecto>(arc, setCns);
 
 
 
@@ -307,8 +311,8 @@ namespace VCFramework.SitioWeb.Proyectos
                 return;
             }
 
-            NegocioMySQL.Factory fac = new NegocioMySQL.Factory();
-            int ID_GUARDADO = fac.Insertar<Entidad.Proyectos>(entidad);
+            Factory fac = new Factory();
+            int ID_GUARDADO = fac.Insertar<Entidad.Proyectos>(entidad, setCns);
             if (ID_GUARDADO > 0)
             {
 
@@ -333,7 +337,7 @@ namespace VCFramework.SitioWeb.Proyectos
                 calendario.Tipo = 1;
                 #endregion
 
-                fac.Insertar<Entidad.Calendario>(calendario);
+                fac.Insertar<Entidad.Calendario>(calendario, setCns);
 
                 if (Session["LISTA_SESION"] != null)
                 {
@@ -356,7 +360,7 @@ namespace VCFramework.SitioWeb.Proyectos
                                 arc.Modificado = false;
                                 arc.Nuevo = true;
                                 arc.ProId = proyectoGuardado.Id;
-                                fac.Insertar<Entidad.ArchivosProyecto>(arc);
+                                fac.Insertar<Entidad.ArchivosProyecto>(arc, setCns);
                             }
                         }
                     }
@@ -373,7 +377,7 @@ namespace VCFramework.SitioWeb.Proyectos
                         arc.Modificado = false;
                         arc.Nuevo = true;
                         arc.ProId = ID_GUARDADO;
-                        int idArc = fac.Insertar<Entidad.ArchivosProyecto>(arc);
+                        int idArc = fac.Insertar<Entidad.ArchivosProyecto>(arc, setCns);
                         arc.Id = idArc;
                         List<Entidad.ArchivosProyecto> listaArc = new List<Entidad.ArchivosProyecto>();
                         listaArc.Add(arc);
@@ -462,9 +466,9 @@ namespace VCFramework.SitioWeb.Proyectos
                     return;
                 }
 
-                NegocioMySQL.Factory fac = new NegocioMySQL.Factory();
+                Factory fac = new Factory();
 
-                if (fac.Update<Entidad.Proyectos>(entidad) > 0)
+                if (fac.Update<Entidad.Proyectos>(entidad, setCns) > 0)
                 {
 
                     //modificamos al calendario
@@ -488,7 +492,7 @@ namespace VCFramework.SitioWeb.Proyectos
                         cal.Modificado = true;
                         cal.Borrado = false;
                         cal.Titulo = entidad.Nombre;
-                        fac.Update<Entidad.Calendario>(cal);
+                        fac.Update<Entidad.Calendario>(cal, setCns);
                         
                     }
                     #endregion
@@ -549,8 +553,8 @@ namespace VCFramework.SitioWeb.Proyectos
                     arc.Nuevo = true;
                     arc.Modificado = false;
                     arc.Borrado = false;
-                    NegocioMySQL.Factory fac = new NegocioMySQL.Factory();
-                    fac.Insertar<Entidad.ArchivosProyecto>(arc);
+                    Factory fac = new Factory();
+                    fac.Insertar<Entidad.ArchivosProyecto>(arc, setCns);
                     ODSLISTADO.DataBind();
                     grillaDocumentos.DataBind();
 
@@ -672,8 +676,8 @@ namespace VCFramework.SitioWeb.Proyectos
                         archivo.Nuevo = false;
                         archivo.Modificado = true;
                         archivo.Eliminado = 1;
-                        NegocioMySQL.Factory fac = new NegocioMySQL.Factory();
-                        fac.Update<Entidad.ArchivosProyecto>(archivo);
+                        Factory fac = new Factory();
+                        fac.Update<Entidad.ArchivosProyecto>(archivo, setCns);
                     }
                 }
                 ODSLISTADO.DataBind();

@@ -3,11 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Runtime.Caching;
+using VCFramework.Negocio.Factory;
 
 namespace VCFramework.NegocioMySQL
 {
     public class Comuna
     {
+        public static System.Configuration.ConnectionStringSettings setCns = System.Web.Configuration.WebConfigurationManager.ConnectionStrings["BDColegioSql"];
+        public static System.Configuration.ConnectionStringSettings setCnsWebLun = System.Web.Configuration.WebConfigurationManager.ConnectionStrings["MSUsuarioLunConectionString"];
+
         static ObjectCache cache = MemoryCache.Default;
         private static List<VCFramework.Entidad.Comuna> fileContents = cache["fileContentsCom"] as List<VCFramework.Entidad.Comuna>;
         //este esta en días
@@ -16,12 +20,12 @@ namespace VCFramework.NegocioMySQL
 
         public static List<VCFramework.Entidad.Comuna> ListarComunas()
         {
-            VCFramework.NegocioMySQL.Factory fac = new VCFramework.NegocioMySQL.Factory();
+            Factory fac = new Factory();
             List<VCFramework.Entidad.Comuna> lista2 = new List<VCFramework.Entidad.Comuna>();
 
             if (fileContents == null)
             {
-                List<object> lista = fac.Leer<VCFramework.Entidad.Comuna>();
+                List<object> lista = fac.Leer<VCFramework.Entidad.Comuna>(setCns);
 
                 if (lista != null)
                 {
@@ -51,7 +55,7 @@ namespace VCFramework.NegocioMySQL
         {
             Entidad.Comuna comInsertar = new Entidad.Comuna();
             comInsertar.Nombre = "Seleccione";
-            VCFramework.NegocioMySQL.Factory fac = new VCFramework.NegocioMySQL.Factory();
+            Factory fac = new Factory();
             List<VCFramework.Entidad.Comuna> listaRetorno = new List<VCFramework.Entidad.Comuna>();
 
             List<VCFramework.Entidad.Provincia> provincias = Provincia.ObtenerProvinciasDeLaRegion(regId);

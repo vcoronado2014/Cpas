@@ -7,11 +7,15 @@ using System.Web.UI.WebControls;
 using System.IO;
 using DevExpress.Web;
 using System.Net.Mail;
+using VCFramework.Negocio.Factory;
 
 namespace VCFramework.SitioWeb.Administracion
 {
     public partial class movimientoEditar : System.Web.UI.Page
     {
+        public static System.Configuration.ConnectionStringSettings setCns = System.Web.Configuration.WebConfigurationManager.ConnectionStrings["BDColegioSql"];
+        public static System.Configuration.ConnectionStringSettings setCnsWebLun = System.Web.Configuration.WebConfigurationManager.ConnectionStrings["MSUsuarioLunConectionString"];
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!Page.IsPostBack)
@@ -120,8 +124,8 @@ namespace VCFramework.SitioWeb.Administracion
                     entidadEli.Nuevo = false;
                     entidadEli.Modificado = true;
                     entidadEli.Eliminado = 1;
-                    VCFramework.NegocioMySQL.Factory fac = new NegocioMySQL.Factory();
-                    if (fac.Update<VCFramework.Entidad.IngresoEgreso>(entidadEli) > 0)
+                    Factory fac = new Factory();
+                    if (fac.Update<VCFramework.Entidad.IngresoEgreso>(entidadEli, setCns) > 0)
                     {
                         EstiloMensaje(Administracion.EstiloMensaje.Ok, "Movimiento Eliminado con éxito");
                         //ahora los botones
@@ -216,9 +220,9 @@ namespace VCFramework.SitioWeb.Administracion
             entidad.UrlDocumento = nombreArchivo;
             entidad.UsuId = usu.AutentificacionUsuario.Id;
 
-            NegocioMySQL.Factory fac = new NegocioMySQL.Factory();
+            Factory fac = new Factory();
 
-            if (fac.Insertar<Entidad.IngresoEgreso>(entidad) > 0)
+            if (fac.Insertar<Entidad.IngresoEgreso>(entidad, setCns) > 0)
             {
 
                 if (NegocioMySQL.Utiles.ENVIA_RENDICIONES(entidad.InstId) == "1")
@@ -289,9 +293,9 @@ namespace VCFramework.SitioWeb.Administracion
                 entidad.UrlDocumento = nombreArchivo;
                 entidad.UsuId = obj.UsuId;
 
-                NegocioMySQL.Factory fac = new NegocioMySQL.Factory();
+                Factory fac = new Factory();
 
-                if (fac.Update<Entidad.IngresoEgreso>(entidad) > 0)
+                if (fac.Update<Entidad.IngresoEgreso>(entidad, setCns) > 0)
                 {
                     if (NegocioMySQL.Utiles.ENVIA_RENDICIONES(entidad.InstId) == "1")
                     {

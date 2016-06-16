@@ -5,11 +5,16 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Text;
+using VCFramework.Negocio.Factory;
 
 namespace VCFramework.SitioWeb.Administracion
 {
     public partial class usuarioEditar : System.Web.UI.Page
     {
+        public static System.Configuration.ConnectionStringSettings setCns = System.Web.Configuration.WebConfigurationManager.ConnectionStrings["BDColegioSql"];
+        public static System.Configuration.ConnectionStringSettings setCnsWebLun = System.Web.Configuration.WebConfigurationManager.ConnectionStrings["MSUsuarioLunConectionString"];
+
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!Page.IsPostBack)
@@ -94,8 +99,8 @@ namespace VCFramework.SitioWeb.Administracion
             aus.CorreoElectronico = txtCorreo.Text;
             if (idReg > 0 && idCom > 0)
             {
-                VCFramework.NegocioMySQL.Factory fac = new NegocioMySQL.Factory();
-                if (fac.Insertar<VCFramework.Entidad.AutentificacionUsuario>(aus) > 0)
+                Factory fac = new Factory();
+                if (fac.Insertar<VCFramework.Entidad.AutentificacionUsuario>(aus, setCns) > 0)
                 {
                     Entidad.AutentificacionUsuario usuarioGuardado = VCFramework.NegocioMySQL.AutentificacionUsuario.ObtenerUsuario(aus.NombreUsuario, NegocioMySQL.Utiles.DesEncriptar(aus.Password));
                     if (usuarioGuardado != null && usuarioGuardado.Id > 0)
@@ -117,7 +122,7 @@ namespace VCFramework.SitioWeb.Administracion
                         persona.Telefonos = txtTelefonos.Text;
                         persona.UsuId = usuarioGuardado.Id;
 
-                        if (fac.Insertar<VCFramework.Entidad.Persona>(persona) > 0)
+                        if (fac.Insertar<VCFramework.Entidad.Persona>(persona, setCns) > 0)
                         {
                             EstiloMensaje(Administracion.EstiloMensaje.Ok, "Registro insertado con éxito");
                             //litMensaje.Text = "Registro insertado con éxito";
@@ -258,8 +263,8 @@ namespace VCFramework.SitioWeb.Administracion
                         aus.Nuevo = false;
                         aus.Modificado = true;
                         aus.Borrado = false;
-                        VCFramework.NegocioMySQL.Factory fac = new NegocioMySQL.Factory();
-                        if (fac.Update<VCFramework.Entidad.AutentificacionUsuario>(aus) > 0)
+                        Factory fac = new Factory();
+                        if (fac.Update<VCFramework.Entidad.AutentificacionUsuario>(aus, setCns) > 0)
                         {
 
                             

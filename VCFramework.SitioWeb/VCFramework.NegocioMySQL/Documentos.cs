@@ -2,20 +2,24 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using VCFramework.Negocio.Factory;
 
 namespace VCFramework.NegocioMySQL
 {
     public class Documentos
     {
+        public static System.Configuration.ConnectionStringSettings setCns = System.Web.Configuration.WebConfigurationManager.ConnectionStrings["BDColegioSql"];
+        public static System.Configuration.ConnectionStringSettings setCnsWebLun = System.Web.Configuration.WebConfigurationManager.ConnectionStrings["MSUsuarioLunConectionString"];
+
         public static List<VCFramework.Entidad.Documentos> ObtenerDocumentosPorInstId(int instId)
         {
-            VCFramework.NegocioMySQL.Factory fac = new VCFramework.NegocioMySQL.Factory();
+            Factory fac = new Factory();
             FiltroGenerico filtro = new FiltroGenerico();
             filtro.Campo = "INST_ID";
             filtro.Valor = instId.ToString();
             filtro.TipoDato = TipoDatoGeneral.Entero;
 
-            List<object> lista = fac.Leer<VCFramework.Entidad.Documentos>(filtro);
+            List<object> lista = fac.Leer<VCFramework.Entidad.Documentos>(filtro, setCns);
             List<VCFramework.Entidad.Documentos> lista2 = new List<VCFramework.Entidad.Documentos>();
             if (lista != null)
             {
@@ -38,13 +42,13 @@ namespace VCFramework.NegocioMySQL
         public static VCFramework.Entidad.Documentos ObtenerDocumentoId(int id)
         {
             VCFramework.Entidad.Documentos retorno = new Entidad.Documentos();
-            VCFramework.NegocioMySQL.Factory fac = new VCFramework.NegocioMySQL.Factory();
+            Factory fac = new Factory();
             FiltroGenerico filtro = new FiltroGenerico();
             filtro.Campo = "ID";
             filtro.Valor = id.ToString();
             filtro.TipoDato = TipoDatoGeneral.Entero;
 
-            List<object> lista = fac.Leer<VCFramework.Entidad.Documentos>(filtro);
+            List<object> lista = fac.Leer<VCFramework.Entidad.Documentos>(filtro, setCns);
             List<VCFramework.Entidad.Documentos> lista2 = new List<VCFramework.Entidad.Documentos>();
             if (lista != null)
             {

@@ -2,20 +2,25 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using VCFramework.Negocio.Factory;
 
 namespace VCFramework.NegocioMySQL
 {
     public class UsuarioLista
     {
+        public static System.Configuration.ConnectionStringSettings setCns = System.Web.Configuration.WebConfigurationManager.ConnectionStrings["BDColegioSql"];
+        public static System.Configuration.ConnectionStringSettings setCnsWebLun = System.Web.Configuration.WebConfigurationManager.ConnectionStrings["MSUsuarioLunConectionString"];
+
+
         public static List<VCFramework.Entidad.UsuarioLista> Obtener(int idLista)
         {
-            VCFramework.NegocioMySQL.Factory fac = new VCFramework.NegocioMySQL.Factory();
+            Factory fac = new Factory();
             FiltroGenerico filtro = new FiltroGenerico();
             filtro.Campo = "LTR_ID";
             filtro.Valor = idLista.ToString();
             filtro.TipoDato = TipoDatoGeneral.Entero;
 
-            List<object> lista = fac.Leer<VCFramework.Entidad.UsuarioLista>(filtro);
+            List<object> lista = fac.Leer<VCFramework.Entidad.UsuarioLista>(filtro, setCns);
             List<VCFramework.Entidad.UsuarioLista> lista2 = new List<VCFramework.Entidad.UsuarioLista>();
             if (lista != null)
             {
@@ -28,13 +33,13 @@ namespace VCFramework.NegocioMySQL
         }
         public static VCFramework.Entidad.UsuarioLista ObtenerId(int id)
         {
-            VCFramework.NegocioMySQL.Factory fac = new VCFramework.NegocioMySQL.Factory();
+            Factory fac = new Factory();
             FiltroGenerico filtro = new FiltroGenerico();
             filtro.Campo = "ID";
             filtro.Valor = id.ToString();
             filtro.TipoDato = TipoDatoGeneral.Entero;
 
-            List<object> lista = fac.Leer<VCFramework.Entidad.UsuarioLista>(filtro);
+            List<object> lista = fac.Leer<VCFramework.Entidad.UsuarioLista>(filtro, setCns);
             List<VCFramework.Entidad.UsuarioLista> lista2 = new List<VCFramework.Entidad.UsuarioLista>();
             if (lista != null)
             {
@@ -52,7 +57,7 @@ namespace VCFramework.NegocioMySQL
         }
         public static VCFramework.Entidad.UsuarioLista ObtenerIdLtr(string rol, int ltrId)
         {
-            VCFramework.NegocioMySQL.Factory fac = new VCFramework.NegocioMySQL.Factory();
+            Factory fac = new Factory();
             FiltroGenerico filtro = new FiltroGenerico();
             filtro.Campo = "ROL";
             filtro.Valor = rol.ToString();
@@ -67,7 +72,7 @@ namespace VCFramework.NegocioMySQL
             filtros.Add(filtro);
             filtros.Add(filtro2);
 
-            List<object> lista = fac.Leer<VCFramework.Entidad.UsuarioLista>(filtros);
+            List<object> lista = fac.Leer<VCFramework.Entidad.UsuarioLista>(filtros, setCns);
             List<VCFramework.Entidad.UsuarioLista> lista2 = new List<VCFramework.Entidad.UsuarioLista>();
             if (lista != null)
             {

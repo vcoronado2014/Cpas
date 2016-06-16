@@ -3,11 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Runtime.Caching;
+using VCFramework.Negocio.Factory;
 
 namespace VCFramework.NegocioMySQL
 {
     public class Region
     {
+        public static System.Configuration.ConnectionStringSettings setCns = System.Web.Configuration.WebConfigurationManager.ConnectionStrings["BDColegioSql"];
+        public static System.Configuration.ConnectionStringSettings setCnsWebLun = System.Web.Configuration.WebConfigurationManager.ConnectionStrings["MSUsuarioLunConectionString"];
+
 
         static ObjectCache cache = MemoryCache.Default;
         private static List<VCFramework.Entidad.Region> fileContents = cache["fileContentsReg"] as List<VCFramework.Entidad.Region>;
@@ -17,12 +21,12 @@ namespace VCFramework.NegocioMySQL
 
         public static List<VCFramework.Entidad.Region> ListarRegiones()
         {
-            VCFramework.NegocioMySQL.Factory fac = new VCFramework.NegocioMySQL.Factory();
+            Factory fac = new Factory();
             List<VCFramework.Entidad.Region> lista2 = new List<VCFramework.Entidad.Region>();
 
             if (fileContents == null)
             {
-                List<object> lista = fac.Leer<VCFramework.Entidad.Region>();
+                List<object> lista = fac.Leer<VCFramework.Entidad.Region>(setCns);
                 Entidad.Region regInicio = new Entidad.Region();
                 regInicio.Id = 0;
                 regInicio.Nombre = "Seleccione";

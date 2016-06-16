@@ -124,6 +124,7 @@ C:\CPAS_CLAVE\Cpas\VCFramework.SitioWeb\VCFramework.SitioWeb_Metro\bin\VCFramewo
 C:\CPAS_CLAVE\Cpas\VCFramework.SitioWeb\VCFramework.SitioWeb_Metro\bin\VCFramework.Entidad.dll
 C:\CPAS_CLAVE\Cpas\VCFramework.SitioWeb\VCFramework.SitioWeb_Metro\bin\VCFramework.EntidadFuniconal.dll
 C:\CPAS_CLAVE\Cpas\VCFramework.SitioWeb\VCFramework.SitioWeb_Metro\bin\VCFramework.NegocioMySQL.dll
+C:\CPAS_CLAVE\Cpas\VCFramework.SitioWeb\VCFramework.SitioWeb_Metro\bin\VCFramework.Negocio.Factory.dll
 C:\CPAS_CLAVE\Cpas\VCFramework.SitioWeb\VCFramework.SitioWeb_Metro\bin\Newtonsoft.Json.dll
 C:\CPAS_CLAVE\Cpas\VCFramework.SitioWeb\VCFramework.SitioWeb_Metro\bin\DevExpress.Pdf.v15.2.Core.dll
 C:\CPAS_CLAVE\Cpas\VCFramework.SitioWeb\VCFramework.SitioWeb_Metro\bin\DevExpress.Pdf.v15.2.Drawing.dll
@@ -136,6 +137,7 @@ C:\CPAS_CLAVE\Cpas\VCFramework.SitioWeb\VCFramework.SitioWeb_Metro\bin\DevExpres
 C:\CPAS_CLAVE\Cpas\VCFramework.SitioWeb\VCFramework.SitioWeb_Metro\bin\DevExpress.Office.v15.2.Core.xml
 C:\CPAS_CLAVE\Cpas\VCFramework.SitioWeb\VCFramework.SitioWeb_Metro\bin\DevExpress.RichEdit.v15.2.Core.xml
 C:\CPAS_CLAVE\Cpas\VCFramework.SitioWeb\VCFramework.SitioWeb_Metro\bin\DevExpress.Web.v15.2.xml
+C:\CPAS_CLAVE\Cpas\VCFramework.SitioWeb\VCFramework.SitioWeb_Metro\bin\VCFramework.Negocio.Factory.pdb
 C:\CPAS_CLAVE\Cpas\VCFramework.SitioWeb\VCFramework.SitioWeb_Metro\bin\DevExpress.Pdf.v15.2.Core.xml
 C:\CPAS_CLAVE\Cpas\VCFramework.SitioWeb\VCFramework.SitioWeb_Metro\bin\DevExpress.Pdf.v15.2.Drawing.xml
 C:\CPAS_CLAVE\Cpas\VCFramework.SitioWeb\VCFramework.SitioWeb_Metro\bin\de\DevExpress.Data.v15.2.resources.dll

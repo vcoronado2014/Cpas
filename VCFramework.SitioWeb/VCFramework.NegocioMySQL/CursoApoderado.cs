@@ -2,14 +2,18 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using VCFramework.Negocio.Factory;
 
 namespace VCFramework.NegocioMySQL
 {
     public class CursoApoderado
     {
+        public static System.Configuration.ConnectionStringSettings setCns = System.Web.Configuration.WebConfigurationManager.ConnectionStrings["BDColegioSql"];
+        public static System.Configuration.ConnectionStringSettings setCnsWebLun = System.Web.Configuration.WebConfigurationManager.ConnectionStrings["MSUsuarioLunConectionString"];
+
         public static List<VCFramework.Entidad.CursoApoderado> ObtenerCursosDelApoderado(int instId, int usuId)
         {
-            VCFramework.NegocioMySQL.Factory fac = new VCFramework.NegocioMySQL.Factory();
+            Factory fac = new Factory();
             FiltroGenerico filtro = new FiltroGenerico();
             filtro.Campo = "INST_ID";
             filtro.Valor = instId.ToString();
@@ -25,7 +29,7 @@ namespace VCFramework.NegocioMySQL
             filtros.Add(filtro);
             filtros.Add(filtro1);
 
-            List<object> lista = fac.Leer<VCFramework.Entidad.CursoApoderado>(filtros);
+            List<object> lista = fac.Leer<VCFramework.Entidad.CursoApoderado>(filtros, setCns);
             List<VCFramework.Entidad.CursoApoderado> lista2 = new List<VCFramework.Entidad.CursoApoderado>();
             if (lista != null)
             {
@@ -45,7 +49,7 @@ namespace VCFramework.NegocioMySQL
 
             Factory fac = new Factory();
 
-            retorno = fac.Insertar<Entidad.CursoApoderado>(cursoApoderado);
+            retorno = fac.Insertar<Entidad.CursoApoderado>(cursoApoderado, setCns);
 
             return retorno;
         }
@@ -60,7 +64,7 @@ namespace VCFramework.NegocioMySQL
 
             Factory fac = new Factory();
 
-            retorno = fac.Update<Entidad.CursoApoderado>(cursoApoderado);
+            retorno = fac.Update<Entidad.CursoApoderado>(cursoApoderado, setCns);
 
             return retorno;
         }
@@ -75,7 +79,7 @@ namespace VCFramework.NegocioMySQL
 
             Factory fac = new Factory();
 
-            retorno = fac.Delete<Entidad.CursoApoderado>(cursoApoderado);
+            retorno = fac.Delete<Entidad.CursoApoderado>(cursoApoderado, setCns);
 
             return retorno;
         }

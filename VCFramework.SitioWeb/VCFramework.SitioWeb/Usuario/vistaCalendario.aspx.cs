@@ -60,7 +60,7 @@ namespace VCFramework.SitioWeb.Usuario
         //{
         //    if (e.Parameter == "guardar")
         //    {
-        //        VCFramework.NegocioMySQL.Factory fac = new NegocioMySQL.Factory();
+        //        Factory fac = new Factory();
         //        #region guardar calendario
         //        Entidad.Calendario calendario = new Entidad.Calendario();
         //        calendario.Detalle = txtAsunto.Text;

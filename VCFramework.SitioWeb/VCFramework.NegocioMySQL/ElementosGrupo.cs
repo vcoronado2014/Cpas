@@ -3,11 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Runtime.Caching;
+using VCFramework.Negocio.Factory;
 
 namespace VCFramework.NegocioMySQL
 {
     public class ElementosGrupo
     {
+        public static System.Configuration.ConnectionStringSettings setCns = System.Web.Configuration.WebConfigurationManager.ConnectionStrings["BDColegioSql"];
+        public static System.Configuration.ConnectionStringSettings setCnsWebLun = System.Web.Configuration.WebConfigurationManager.ConnectionStrings["MSUsuarioLunConectionString"];
+
         static ObjectCache cache = MemoryCache.Default;
         private static List<VCFramework.Entidad.ElementosGrupo> fileContents = cache["fileContentsElementosGrupo"] as List<VCFramework.Entidad.ElementosGrupo>;
         //este esta en días
@@ -15,7 +19,7 @@ namespace VCFramework.NegocioMySQL
         private static string nombreArchivo = "cacheElementosGrupo.txt";
         public static List<VCFramework.Entidad.ElementosGrupo> ObtenerElementosGrupo(int idGrupo)
         {
-            //VCFramework.NegocioMySQL.Factory fac = new VCFramework.NegocioMySQL.Factory();
+            //Factory fac = new Factory();
             //FiltroGenerico filtro = new FiltroGenerico();
             //filtro.Campo = "ID_GRUPO";
             //filtro.Valor = idGrupo.ToString();
@@ -44,12 +48,12 @@ namespace VCFramework.NegocioMySQL
         }
         public static List<VCFramework.Entidad.ElementosGrupo> ObtenerElementosGrupoAll()
         {
-            VCFramework.NegocioMySQL.Factory fac = new VCFramework.NegocioMySQL.Factory();
+            Factory fac = new Factory();
             List<VCFramework.Entidad.ElementosGrupo> lista2 = new List<VCFramework.Entidad.ElementosGrupo>();
 
             if (fileContents == null)
             {
-                List<object> lista = fac.Leer<VCFramework.Entidad.ElementosGrupo>();
+                List<object> lista = fac.Leer<VCFramework.Entidad.ElementosGrupo>(setCns);
 
                 if (lista != null)
                 {

@@ -5,11 +5,15 @@ using System.Text;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using VCFramework.Negocio.Factory;
 
 namespace VCFramework.SitioWeb.Tricel
 {
     public partial class CrearLista : System.Web.UI.Page
     {
+        public static System.Configuration.ConnectionStringSettings setCns = System.Web.Configuration.WebConfigurationManager.ConnectionStrings["BDColegioSql"];
+        public static System.Configuration.ConnectionStringSettings setCnsWebLun = System.Web.Configuration.WebConfigurationManager.ConnectionStrings["MSUsuarioLunConectionString"];
+
         protected void Page_Load(object sender, EventArgs e)
         {
             #region validacion usuario
@@ -183,8 +187,8 @@ namespace VCFramework.SitioWeb.Tricel
             }
             //aca hay que trabajar con la lista de archivos
 
-            NegocioMySQL.Factory fac = new NegocioMySQL.Factory();
-            int ID_LISTA = fac.Insertar<Entidad.ListaTricel>(entidad);
+            Factory fac = new Factory();
+            int ID_LISTA = fac.Insertar<Entidad.ListaTricel>(entidad, setCns);
 
             if (ID_LISTA > 0)
             {
@@ -195,7 +199,7 @@ namespace VCFramework.SitioWeb.Tricel
                     usuarioPresidente.LtrId = ID_LISTA;
                     usuarioPresidente.Rol = "Presidente";
                     usuarioPresidente.UsuId = int.Parse(cmbPresidente.Value.ToString());
-                    fac.Insertar<Entidad.UsuarioLista>(usuarioPresidente);
+                    fac.Insertar<Entidad.UsuarioLista>(usuarioPresidente, setCns);
                 }
                 if (cmbVicepresidente.Value != null && int.Parse(cmbVicepresidente.Value.ToString()) > 0)
                 {
@@ -203,7 +207,7 @@ namespace VCFramework.SitioWeb.Tricel
                     usuario.LtrId = ID_LISTA;
                     usuario.Rol = "Vicepresidente";
                     usuario.UsuId = int.Parse(cmbVicepresidente.Value.ToString());
-                    fac.Insertar<Entidad.UsuarioLista>(usuario);
+                    fac.Insertar<Entidad.UsuarioLista>(usuario, setCns);
                 }
                 if (cmbSecretario.Value != null && int.Parse(cmbSecretario.Value.ToString()) > 0)
                 {
@@ -211,7 +215,7 @@ namespace VCFramework.SitioWeb.Tricel
                     usuario.LtrId = ID_LISTA;
                     usuario.Rol = "Secretario";
                     usuario.UsuId = int.Parse(cmbSecretario.Value.ToString());
-                    fac.Insertar<Entidad.UsuarioLista>(usuario);
+                    fac.Insertar<Entidad.UsuarioLista>(usuario, setCns);
                 }
                 if (cmbTesorero.Value != null && int.Parse(cmbTesorero.Value.ToString()) > 0)
                 {
@@ -219,7 +223,7 @@ namespace VCFramework.SitioWeb.Tricel
                     usuario.LtrId = ID_LISTA;
                     usuario.Rol = "Tesorero";
                     usuario.UsuId = int.Parse(cmbTesorero.Value.ToString());
-                    fac.Insertar<Entidad.UsuarioLista>(usuario);
+                    fac.Insertar<Entidad.UsuarioLista>(usuario, setCns);
                 }
                 if (cmbOtro1.Value != null && int.Parse(cmbOtro1.Value.ToString()) > 0)
                 {
@@ -227,7 +231,7 @@ namespace VCFramework.SitioWeb.Tricel
                     usuario.LtrId = ID_LISTA;
                     usuario.Rol = "Otro1";
                     usuario.UsuId = int.Parse(cmbOtro1.Value.ToString());
-                    fac.Insertar<Entidad.UsuarioLista>(usuario);
+                    fac.Insertar<Entidad.UsuarioLista>(usuario, setCns);
                 }
                 if (cmbOtro2.Value != null && int.Parse(cmbOtro2.Value.ToString()) > 0)
                 {
@@ -235,7 +239,7 @@ namespace VCFramework.SitioWeb.Tricel
                     usuario.LtrId = ID_LISTA;
                     usuario.Rol = "Otro2";
                     usuario.UsuId = int.Parse(cmbOtro2.Value.ToString());
-                    fac.Insertar<Entidad.UsuarioLista>(usuario);
+                    fac.Insertar<Entidad.UsuarioLista>(usuario,setCns);
                 }
                 if (cmbOtro3.Value != null && int.Parse(cmbOtro3.Value.ToString()) > 0)
                 {
@@ -243,7 +247,7 @@ namespace VCFramework.SitioWeb.Tricel
                     usuario.LtrId = ID_LISTA;
                     usuario.Rol = "Otro3";
                     usuario.UsuId = int.Parse(cmbOtro3.Value.ToString());
-                    fac.Insertar<Entidad.UsuarioLista>(usuario);
+                    fac.Insertar<Entidad.UsuarioLista>(usuario, setCns);
                 }
                 if (cmbOtro4.Value != null && int.Parse(cmbOtro4.Value.ToString()) > 0)
                 {
@@ -251,7 +255,7 @@ namespace VCFramework.SitioWeb.Tricel
                     usuario.LtrId = ID_LISTA;
                     usuario.Rol = "Otro4";
                     usuario.UsuId = int.Parse(cmbOtro4.Value.ToString());
-                    fac.Insertar<Entidad.UsuarioLista>(usuario);
+                    fac.Insertar<Entidad.UsuarioLista>(usuario, setCns);
                 }
                 if (cmbOtro6.Value != null && int.Parse(cmbOtro6.Value.ToString()) > 0)
                 {
@@ -259,7 +263,7 @@ namespace VCFramework.SitioWeb.Tricel
                     usuario.LtrId = ID_LISTA;
                     usuario.Rol = "Otro6";
                     usuario.UsuId = int.Parse(cmbOtro6.Value.ToString());
-                    fac.Insertar<Entidad.UsuarioLista>(usuario);
+                    fac.Insertar<Entidad.UsuarioLista>(usuario, setCns);
                 }
                 if (cmbOtro7.Value != null && int.Parse(cmbOtro7.Value.ToString()) > 0)
                 {
@@ -267,7 +271,7 @@ namespace VCFramework.SitioWeb.Tricel
                     usuario.LtrId = ID_LISTA;
                     usuario.Rol = "Otro7";
                     usuario.UsuId = int.Parse(cmbOtro7.Value.ToString());
-                    fac.Insertar<Entidad.UsuarioLista>(usuario);
+                    fac.Insertar<Entidad.UsuarioLista>(usuario, setCns);
                 }
                 EstiloMensaje(Administracion.EstiloMensaje.Ok, "Registro insertado con éxito");
                 //limpiamos
@@ -355,9 +359,9 @@ namespace VCFramework.SitioWeb.Tricel
                     EstiloMensaje(Administracion.EstiloMensaje.Error, "La fecha de término de la lista no puede ser mayor a la del Tricel.");
                     return;
                 }
-                NegocioMySQL.Factory fac = new NegocioMySQL.Factory();
+                Factory fac = new Factory();
 
-                if (fac.Update<Entidad.ListaTricel>(entidad) > 0)
+                if (fac.Update<Entidad.ListaTricel>(entidad, setCns) > 0)
                 {
 
                     //guardamos los usuarios de la lista
@@ -370,7 +374,7 @@ namespace VCFramework.SitioWeb.Tricel
                         if (us.Id > 0)
                         {
                             us.UsuId = idUs;
-                            fac.Update<Entidad.UsuarioLista>(us);
+                            fac.Update<Entidad.UsuarioLista>(us, setCns);
                         }
                         else
                         {
@@ -378,7 +382,7 @@ namespace VCFramework.SitioWeb.Tricel
                             us.LtrId = id;
                             us.Rol = "Presidente";
                             us.UsuId = idUs;
-                            fac.Insertar<Entidad.UsuarioLista>(us);
+                            fac.Insertar<Entidad.UsuarioLista>(us, setCns);
                         }
                     }
                     else
@@ -386,7 +390,7 @@ namespace VCFramework.SitioWeb.Tricel
                         //se debe eliminar
                         Entidad.UsuarioLista us = NegocioMySQL.UsuarioLista.ObtenerIdLtr("Presidente", id);
                         if (us.UsuId > 0)
-                            fac.Delete<Entidad.UsuarioLista>(us);
+                            fac.Delete<Entidad.UsuarioLista>(us, setCns);
 
                     }
                     #endregion
@@ -400,7 +404,7 @@ namespace VCFramework.SitioWeb.Tricel
                         if (us.Id > 0)
                         {
                             us.UsuId = idUs;
-                            fac.Update<Entidad.UsuarioLista>(us);
+                            fac.Update<Entidad.UsuarioLista>(us, setCns);
                         }
                         else
                         {
@@ -408,7 +412,7 @@ namespace VCFramework.SitioWeb.Tricel
                             us.LtrId = id;
                             us.Rol = "Vicepresidente";
                             us.UsuId = idUs;
-                            fac.Insertar<Entidad.UsuarioLista>(us);
+                            fac.Insertar<Entidad.UsuarioLista>(us, setCns);
                         }
                     }
                     else
@@ -416,7 +420,7 @@ namespace VCFramework.SitioWeb.Tricel
                         //se debe eliminar
                         Entidad.UsuarioLista us = NegocioMySQL.UsuarioLista.ObtenerIdLtr("Vicepresidente", id);
                         if (us.UsuId > 0)
-                            fac.Delete<Entidad.UsuarioLista>(us);
+                            fac.Delete<Entidad.UsuarioLista>(us, setCns);
 
                     }
                     #endregion
@@ -430,7 +434,7 @@ namespace VCFramework.SitioWeb.Tricel
                         if (us.Id > 0)
                         {
                             us.UsuId = idUs;
-                            fac.Update<Entidad.UsuarioLista>(us);
+                            fac.Update<Entidad.UsuarioLista>(us, setCns);
                         }
                         else
                         {
@@ -438,7 +442,7 @@ namespace VCFramework.SitioWeb.Tricel
                             us.LtrId = id;
                             us.Rol = "Tesorero";
                             us.UsuId = idUs;
-                            fac.Insertar<Entidad.UsuarioLista>(us);
+                            fac.Insertar<Entidad.UsuarioLista>(us, setCns);
                         }
                     }
                     else
@@ -446,7 +450,7 @@ namespace VCFramework.SitioWeb.Tricel
                         //se debe eliminar
                         Entidad.UsuarioLista us = NegocioMySQL.UsuarioLista.ObtenerIdLtr("Tesorero", id);
                         if (us.UsuId > 0)
-                            fac.Delete<Entidad.UsuarioLista>(us);
+                            fac.Delete<Entidad.UsuarioLista>(us, setCns);
 
                     }
                     #endregion
@@ -460,7 +464,7 @@ namespace VCFramework.SitioWeb.Tricel
                         if (us.Id > 0)
                         {
                             us.UsuId = idUs;
-                            fac.Update<Entidad.UsuarioLista>(us);
+                            fac.Update<Entidad.UsuarioLista>(us,setCns);
                         }
                         else
                         {
@@ -468,7 +472,7 @@ namespace VCFramework.SitioWeb.Tricel
                             us.LtrId = id;
                             us.Rol = "Secretario";
                             us.UsuId = idUs;
-                            fac.Insertar<Entidad.UsuarioLista>(us);
+                            fac.Insertar<Entidad.UsuarioLista>(us, setCns);
                         }
                     }
                     else
@@ -476,7 +480,7 @@ namespace VCFramework.SitioWeb.Tricel
                         //se debe eliminar
                         Entidad.UsuarioLista us = NegocioMySQL.UsuarioLista.ObtenerIdLtr("Secretario", id);
                         if (us.UsuId > 0)
-                            fac.Delete<Entidad.UsuarioLista>(us);
+                            fac.Delete<Entidad.UsuarioLista>(us, setCns);
 
                     }
                     #endregion
@@ -490,7 +494,7 @@ namespace VCFramework.SitioWeb.Tricel
                         if (us.Id > 0)
                         {
                             us.UsuId = idUs;
-                            fac.Update<Entidad.UsuarioLista>(us);
+                            fac.Update<Entidad.UsuarioLista>(us, setCns);
                         }
                         else
                         {
@@ -498,7 +502,7 @@ namespace VCFramework.SitioWeb.Tricel
                             us.LtrId = id;
                             us.Rol = "Otro1";
                             us.UsuId = idUs;
-                            fac.Insertar<Entidad.UsuarioLista>(us);
+                            fac.Insertar<Entidad.UsuarioLista>(us,setCns);
                         }
                     }
                     else
@@ -506,7 +510,7 @@ namespace VCFramework.SitioWeb.Tricel
                         //se debe eliminar
                         Entidad.UsuarioLista us = NegocioMySQL.UsuarioLista.ObtenerIdLtr("Otro1", id);
                         if (us.UsuId > 0)
-                            fac.Delete<Entidad.UsuarioLista>(us);
+                            fac.Delete<Entidad.UsuarioLista>(us, setCns);
 
                     }
                     #endregion
@@ -520,7 +524,7 @@ namespace VCFramework.SitioWeb.Tricel
                         if (us.Id > 0)
                         {
                             us.UsuId = idUs;
-                            fac.Update<Entidad.UsuarioLista>(us);
+                            fac.Update<Entidad.UsuarioLista>(us, setCns);
                         }
                         else
                         {
@@ -528,7 +532,7 @@ namespace VCFramework.SitioWeb.Tricel
                             us.LtrId = id;
                             us.Rol = "Otro2";
                             us.UsuId = idUs;
-                            fac.Insertar<Entidad.UsuarioLista>(us);
+                            fac.Insertar<Entidad.UsuarioLista>(us, setCns);
                         }
                     }
                     else
@@ -536,7 +540,7 @@ namespace VCFramework.SitioWeb.Tricel
                         //se debe eliminar
                         Entidad.UsuarioLista us = NegocioMySQL.UsuarioLista.ObtenerIdLtr("Otro2", id);
                         if (us.UsuId > 0)
-                            fac.Delete<Entidad.UsuarioLista>(us);
+                            fac.Delete<Entidad.UsuarioLista>(us, setCns);
 
                     }
                     #endregion
@@ -550,7 +554,7 @@ namespace VCFramework.SitioWeb.Tricel
                         if (us.Id > 0)
                         {
                             us.UsuId = idUs;
-                            fac.Update<Entidad.UsuarioLista>(us);
+                            fac.Update<Entidad.UsuarioLista>(us, setCns);
                         }
                         else
                         {
@@ -558,7 +562,7 @@ namespace VCFramework.SitioWeb.Tricel
                             us.LtrId = id;
                             us.Rol = "Otro3";
                             us.UsuId = idUs;
-                            fac.Insertar<Entidad.UsuarioLista>(us);
+                            fac.Insertar<Entidad.UsuarioLista>(us,setCns);
                         }
                     }
                     else
@@ -566,7 +570,7 @@ namespace VCFramework.SitioWeb.Tricel
                         //se debe eliminar
                         Entidad.UsuarioLista us = NegocioMySQL.UsuarioLista.ObtenerIdLtr("Otro3", id);
                         if (us.UsuId > 0)
-                            fac.Delete<Entidad.UsuarioLista>(us);
+                            fac.Delete<Entidad.UsuarioLista>(us, setCns);
 
                     }
                     #endregion
@@ -580,7 +584,7 @@ namespace VCFramework.SitioWeb.Tricel
                         if (us.Id > 0)
                         {
                             us.UsuId = idUs;
-                            fac.Update<Entidad.UsuarioLista>(us);
+                            fac.Update<Entidad.UsuarioLista>(us,setCns);
                         }
                         else
                         {
@@ -588,7 +592,7 @@ namespace VCFramework.SitioWeb.Tricel
                             us.LtrId = id;
                             us.Rol = "Otro4";
                             us.UsuId = idUs;
-                            fac.Insertar<Entidad.UsuarioLista>(us);
+                            fac.Insertar<Entidad.UsuarioLista>(us, setCns);
                         }
                     }
                     else
@@ -596,7 +600,7 @@ namespace VCFramework.SitioWeb.Tricel
                         //se debe eliminar
                         Entidad.UsuarioLista us = NegocioMySQL.UsuarioLista.ObtenerIdLtr("Otro4", id);
                         if (us.UsuId > 0)
-                            fac.Delete<Entidad.UsuarioLista>(us);
+                            fac.Delete<Entidad.UsuarioLista>(us, setCns);
 
                     }
                     #endregion
@@ -610,7 +614,7 @@ namespace VCFramework.SitioWeb.Tricel
                         if (us.Id > 0)
                         {
                             us.UsuId = idUs;
-                            fac.Update<Entidad.UsuarioLista>(us);
+                            fac.Update<Entidad.UsuarioLista>(us, setCns);
                         }
                         else
                         {
@@ -618,7 +622,7 @@ namespace VCFramework.SitioWeb.Tricel
                             us.LtrId = id;
                             us.Rol = "Otro6";
                             us.UsuId = idUs;
-                            fac.Insertar<Entidad.UsuarioLista>(us);
+                            fac.Insertar<Entidad.UsuarioLista>(us, setCns);
                         }
                     }
                     else
@@ -626,7 +630,7 @@ namespace VCFramework.SitioWeb.Tricel
                         //se debe eliminar
                         Entidad.UsuarioLista us = NegocioMySQL.UsuarioLista.ObtenerIdLtr("Otro6", id);
                         if (us.UsuId > 0)
-                            fac.Delete<Entidad.UsuarioLista>(us);
+                            fac.Delete<Entidad.UsuarioLista>(us, setCns);
 
                     }
                     #endregion
@@ -640,7 +644,7 @@ namespace VCFramework.SitioWeb.Tricel
                         if (us.Id > 0)
                         {
                             us.UsuId = idUs;
-                            fac.Update<Entidad.UsuarioLista>(us);
+                            fac.Update<Entidad.UsuarioLista>(us, setCns);
                         }
                         else
                         {
@@ -648,7 +652,7 @@ namespace VCFramework.SitioWeb.Tricel
                             us.LtrId = id;
                             us.Rol = "Otro7";
                             us.UsuId = idUs;
-                            fac.Insertar<Entidad.UsuarioLista>(us);
+                            fac.Insertar<Entidad.UsuarioLista>(us, setCns);
                         }
                     }
                     else
@@ -656,7 +660,7 @@ namespace VCFramework.SitioWeb.Tricel
                         //se debe eliminar
                         Entidad.UsuarioLista us = NegocioMySQL.UsuarioLista.ObtenerIdLtr("Otro7", id);
                         if (us.UsuId > 0)
-                            fac.Delete<Entidad.UsuarioLista>(us);
+                            fac.Delete<Entidad.UsuarioLista>(us, setCns);
 
                     }
                     #endregion
@@ -681,7 +685,7 @@ namespace VCFramework.SitioWeb.Tricel
                         cal.Modificado = true;
                         cal.Borrado = false;
                         cal.Titulo = entidad.Nombre;
-                        fac.Update<Entidad.Calendario>(cal);
+                        fac.Update<Entidad.Calendario>(cal, setCns);
 
                     }
                     #endregion
@@ -885,8 +889,8 @@ namespace VCFramework.SitioWeb.Tricel
                     entidadEli.Nuevo = false;
                     entidadEli.Modificado = true;
                     entidadEli.Eliminado = 1;
-                    VCFramework.NegocioMySQL.Factory fac = new NegocioMySQL.Factory();
-                    if (fac.Update<VCFramework.Entidad.ListaTricel>(entidadEli) > 0)
+                    Factory fac = new Factory();
+                    if (fac.Update<VCFramework.Entidad.ListaTricel>(entidadEli, setCns) > 0)
                     {
                         #region modificar calendario
                         //primero lo buscamos
@@ -905,7 +909,7 @@ namespace VCFramework.SitioWeb.Tricel
                             cal.Nuevo = false;
                             cal.Modificado = true;
                             cal.Borrado = false;
-                            fac.Update<Entidad.Calendario>(cal);
+                            fac.Update<Entidad.Calendario>(cal, setCns);
                         }
                         #endregion
 

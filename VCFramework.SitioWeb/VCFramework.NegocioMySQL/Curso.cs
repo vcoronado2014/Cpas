@@ -3,11 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Runtime.Caching;
+using VCFramework.Negocio.Factory;
 
 namespace VCFramework.NegocioMySQL
 {
     public class Curso
     {
+        public static System.Configuration.ConnectionStringSettings setCns = System.Web.Configuration.WebConfigurationManager.ConnectionStrings["BDColegioSql"];
+        public static System.Configuration.ConnectionStringSettings setCnsWebLun = System.Web.Configuration.WebConfigurationManager.ConnectionStrings["MSUsuarioLunConectionString"];
+
         static ObjectCache cache = MemoryCache.Default;
         private static List<VCFramework.Entidad.Curso> fileContents = cache["fileContentsCurso"] as List<VCFramework.Entidad.Curso>;
         //este esta en días
@@ -16,12 +20,12 @@ namespace VCFramework.NegocioMySQL
 
         public static List<VCFramework.Entidad.Curso> ListarCursos()
         {
-            VCFramework.NegocioMySQL.Factory fac = new VCFramework.NegocioMySQL.Factory();
+            Factory fac = new Factory();
             List<VCFramework.Entidad.Curso> lista2 = new List<VCFramework.Entidad.Curso>();
 
             if (fileContents == null)
             {
-                List<object> lista = fac.Leer<VCFramework.Entidad.Curso>();
+                List<object> lista = fac.Leer<VCFramework.Entidad.Curso>(setCns);
 
                 if (lista != null)
                 {
@@ -53,13 +57,13 @@ namespace VCFramework.NegocioMySQL
             List<VCFramework.Entidad.Curso> lista2 = new List<VCFramework.Entidad.Curso>();
             if (fileContents == null)
             {
-                VCFramework.NegocioMySQL.Factory fac = new VCFramework.NegocioMySQL.Factory();
+                Factory fac = new Factory();
                 FiltroGenerico filtro = new FiltroGenerico();
                 filtro.Campo = "INST_ID";
                 filtro.Valor = instId.ToString();
                 filtro.TipoDato = TipoDatoGeneral.Entero;
 
-                List<object> lista = fac.Leer<VCFramework.Entidad.Curso>(filtro);
+                List<object> lista = fac.Leer<VCFramework.Entidad.Curso>(filtro, setCns);
 
                 if (lista != null)
                 {
@@ -92,7 +96,7 @@ namespace VCFramework.NegocioMySQL
             List<VCFramework.Entidad.Curso> lista2 = new List<VCFramework.Entidad.Curso>();
             if (fileContents == null)
             {
-                VCFramework.NegocioMySQL.Factory fac = new VCFramework.NegocioMySQL.Factory();
+                Factory fac = new Factory();
 
                 List<FiltroGenerico> listaFiltros = new List<FiltroGenerico>();
 
@@ -109,7 +113,7 @@ namespace VCFramework.NegocioMySQL
                 listaFiltros.Add(filtro);
                 listaFiltros.Add(filtro1);
 
-                List<object> lista = fac.Leer<VCFramework.Entidad.Curso>(listaFiltros);
+                List<object> lista = fac.Leer<VCFramework.Entidad.Curso>(listaFiltros, setCns);
 
                 if (lista != null)
                 {
@@ -131,13 +135,13 @@ namespace VCFramework.NegocioMySQL
             List<VCFramework.Entidad.Curso> lista2 = new List<VCFramework.Entidad.Curso>();
             if (fileContents == null)
             {
-                VCFramework.NegocioMySQL.Factory fac = new VCFramework.NegocioMySQL.Factory();
+                Factory fac = new Factory();
                 FiltroGenerico filtro = new FiltroGenerico();
                 filtro.Campo = "INST_ID";
                 filtro.Valor = instId.ToString();
                 filtro.TipoDato = TipoDatoGeneral.Entero;
 
-                List<object> lista = fac.Leer<VCFramework.Entidad.Curso>(filtro);
+                List<object> lista = fac.Leer<VCFramework.Entidad.Curso>(filtro, setCns);
 
                 if (lista != null)
                 {

@@ -2,11 +2,16 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using VCFramework.Negocio.Factory;
 
 namespace VCFramework.DinamicHTML
 {
     public class Articulo
     {
+        public static System.Configuration.ConnectionStringSettings setCns = System.Web.Configuration.WebConfigurationManager.ConnectionStrings["BDColegioSql"];
+        public static System.Configuration.ConnectionStringSettings setCnsWebLun = System.Web.Configuration.WebConfigurationManager.ConnectionStrings["MSUsuarioLunConectionString"];
+
+
         public int Id { get; set;  }
         public int Visible { get; set; }
         public int UsaImagen { get; set; }
@@ -27,8 +32,8 @@ namespace VCFramework.DinamicHTML
 
         public static List<Articulo> ListarArticulos(int idIstitucion, int tipoArticulo)
         {
-            VCFramework.NegocioMySQL.Factory fac = new VCFramework.NegocioMySQL.Factory();
-            VCFramework.NegocioMySQL.FiltroGenerico filtro = new NegocioMySQL.FiltroGenerico();
+            Factory fac = new Factory();
+            FiltroGenerico filtro = new FiltroGenerico();
             filtro.Campo = "INST_ID";
             filtro.Valor = idIstitucion.ToString();
             List<Articulo> lista2 = new List<Articulo>();
@@ -63,7 +68,7 @@ namespace VCFramework.DinamicHTML
             }
             else
             {
-                List<object> lista = fac.Leer<Articulo>(filtro);
+                List<object> lista = fac.Leer<Articulo>(filtro, setCns);
                 
                 if (lista != null)
                 {

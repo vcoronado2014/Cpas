@@ -10,11 +10,15 @@ using System.Net.Mail;
 using System.Text;
 using DevExpress.Spreadsheet;
 using System.Threading;
+using VCFramework.Negocio.Factory;
 
 namespace VCFramework.SitioWeb.Administracion
 {
     public partial class cargaMasiva : System.Web.UI.Page
     {
+        public static System.Configuration.ConnectionStringSettings setCns = System.Web.Configuration.WebConfigurationManager.ConnectionStrings["BDColegioSql"];
+        public static System.Configuration.ConnectionStringSettings setCnsWebLun = System.Web.Configuration.WebConfigurationManager.ConnectionStrings["MSUsuarioLunConectionString"];
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!Page.IsPostBack)
@@ -258,8 +262,8 @@ namespace VCFramework.SitioWeb.Administracion
                     aus.CorreoElectronico = item.Correo;
                     if (idRegion > 0 && idComuna > 0)
                     {
-                        VCFramework.NegocioMySQL.Factory fac = new NegocioMySQL.Factory();
-                        if (fac.Insertar<VCFramework.Entidad.AutentificacionUsuario>(aus) > 0)
+                        Factory fac = new Factory();
+                        if (fac.Insertar<VCFramework.Entidad.AutentificacionUsuario>(aus, setCns) > 0)
                         {
                             Entidad.AutentificacionUsuario usuarioGuardado = VCFramework.NegocioMySQL.AutentificacionUsuario.ObtenerUsuario(aus.NombreUsuario, NegocioMySQL.Utiles.DesEncriptar(aus.Password));
                             if (usuarioGuardado != null && usuarioGuardado.Id > 0)
@@ -281,7 +285,7 @@ namespace VCFramework.SitioWeb.Administracion
                                 persona.Telefonos = item.Telefono;
                                 persona.UsuId = usuarioGuardado.Id;
 
-                                if (fac.Insertar<VCFramework.Entidad.Persona>(persona) > 0)
+                                if (fac.Insertar<VCFramework.Entidad.Persona>(persona, setCns) > 0)
                                 {
 
                                     //guardamos el curso

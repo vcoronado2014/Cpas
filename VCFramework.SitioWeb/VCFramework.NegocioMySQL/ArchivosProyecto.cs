@@ -2,11 +2,15 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using VCFramework.Negocio.Factory;
 
 namespace VCFramework.NegocioMySQL
 {
     public class ArchivosProyecto
     {
+        public static System.Configuration.ConnectionStringSettings setCns = System.Web.Configuration.WebConfigurationManager.ConnectionStrings["BDColegioSql"];
+        public static System.Configuration.ConnectionStringSettings setCnsWebLun = System.Web.Configuration.WebConfigurationManager.ConnectionStrings["MSUsuarioLunConectionString"];
+
         public static List<VCFramework.Entidad.ArchivosProyecto> ObtenerArchivosPorProyectoId(int proId, object listaSesion)
         {
 
@@ -17,13 +21,13 @@ namespace VCFramework.NegocioMySQL
             }
             else
             {
-                VCFramework.NegocioMySQL.Factory fac = new VCFramework.NegocioMySQL.Factory();
+                Factory fac = new Factory();
                 FiltroGenerico filtro = new FiltroGenerico();
                 filtro.Campo = "PRO_ID";
                 filtro.Valor = proId.ToString();
                 filtro.TipoDato = TipoDatoGeneral.Entero;
 
-                List<object> lista = fac.Leer<VCFramework.Entidad.ArchivosProyecto>(filtro);
+                List<object> lista = fac.Leer<VCFramework.Entidad.ArchivosProyecto>(filtro, setCns);
                 List<VCFramework.Entidad.ArchivosProyecto> lista2 = new List<VCFramework.Entidad.ArchivosProyecto>();
                 if (lista != null)
                 {
@@ -39,13 +43,13 @@ namespace VCFramework.NegocioMySQL
 
         public static List<VCFramework.Entidad.ArchivosProyecto> ObtenerArchivoPorId(int id)
         {
-            VCFramework.NegocioMySQL.Factory fac = new VCFramework.NegocioMySQL.Factory();
+            Factory fac = new Factory();
             FiltroGenerico filtro = new FiltroGenerico();
             filtro.Campo = "ID";
             filtro.Valor = id.ToString();
             filtro.TipoDato = TipoDatoGeneral.Entero;
 
-            List<object> lista = fac.Leer<VCFramework.Entidad.ArchivosProyecto>(filtro);
+            List<object> lista = fac.Leer<VCFramework.Entidad.ArchivosProyecto>(filtro, setCns);
             List<VCFramework.Entidad.ArchivosProyecto> lista2 = new List<VCFramework.Entidad.ArchivosProyecto>();
             if (lista != null)
             {

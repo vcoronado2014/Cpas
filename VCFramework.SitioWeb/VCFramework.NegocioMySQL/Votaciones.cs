@@ -2,14 +2,18 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using VCFramework.Negocio.Factory;
 
 namespace VCFramework.NegocioMySQL
 {
     public class Votaciones
     {
+        public static System.Configuration.ConnectionStringSettings setCns = System.Web.Configuration.WebConfigurationManager.ConnectionStrings["BDColegioSql"];
+        public static System.Configuration.ConnectionStringSettings setCnsWebLun = System.Web.Configuration.WebConfigurationManager.ConnectionStrings["MSUsuarioLunConectionString"];
+
         public static List<VCFramework.Entidad.Votaciones> ObtenerVotaciones(int proId)
         {
-            VCFramework.NegocioMySQL.Factory fac = new VCFramework.NegocioMySQL.Factory();
+            Factory fac = new Factory();
             List<FiltroGenerico> filtro = new List<FiltroGenerico>();
             FiltroGenerico filtro1 = new FiltroGenerico();
             filtro1.Campo = "PRO_ID";
@@ -20,7 +24,7 @@ namespace VCFramework.NegocioMySQL
             filtro.Add(filtro1);
 
 
-            List<object> lista = fac.Leer<VCFramework.Entidad.Votaciones>(filtro);
+            List<object> lista = fac.Leer<VCFramework.Entidad.Votaciones>(filtro, setCns);
             List<VCFramework.Entidad.Votaciones> lista2 = new List<VCFramework.Entidad.Votaciones>();
             if (lista != null)
             {
@@ -33,7 +37,7 @@ namespace VCFramework.NegocioMySQL
         }
         public static List<VCFramework.Entidad.Votaciones> ObtenerVotaciones(int proId, int usuId)
         {
-            VCFramework.NegocioMySQL.Factory fac = new VCFramework.NegocioMySQL.Factory();
+            Factory fac = new Factory();
             List<FiltroGenerico> filtro = new List<FiltroGenerico>();
             FiltroGenerico filtro1 = new FiltroGenerico();
             filtro1.Campo = "PRO_ID";
@@ -48,7 +52,7 @@ namespace VCFramework.NegocioMySQL
             filtro.Add(filtro1);
             filtro.Add(filtro2);
 
-            List<object> lista = fac.Leer<VCFramework.Entidad.Votaciones>(filtro);
+            List<object> lista = fac.Leer<VCFramework.Entidad.Votaciones>(filtro, setCns);
             List<VCFramework.Entidad.Votaciones> lista2 = new List<VCFramework.Entidad.Votaciones>();
             if (lista != null)
             {

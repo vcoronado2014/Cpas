@@ -2,21 +2,25 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using VCFramework.Negocio.Factory;
 
 namespace VCFramework.NegocioMySQL
 {
     public class IngresoEgreso
     {
+        public static System.Configuration.ConnectionStringSettings setCns = System.Web.Configuration.WebConfigurationManager.ConnectionStrings["BDColegioSql"];
+        public static System.Configuration.ConnectionStringSettings setCnsWebLun = System.Web.Configuration.WebConfigurationManager.ConnectionStrings["MSUsuarioLunConectionString"];
+
         public static List<VCFramework.EntidadFuniconal.IngresoEgresoFuncional> ObtenerIngresoEgresoPorInstId(int instId)
         {
             List<VCFramework.EntidadFuniconal.IngresoEgresoFuncional> retorno = new List<EntidadFuniconal.IngresoEgresoFuncional>();
-            VCFramework.NegocioMySQL.Factory fac = new VCFramework.NegocioMySQL.Factory();
+            Factory fac = new Factory();
             FiltroGenerico filtro = new FiltroGenerico();
             filtro.Campo = "INST_ID";
             filtro.Valor = instId.ToString();
             filtro.TipoDato = TipoDatoGeneral.Entero;
 
-            List<object> lista = fac.Leer<VCFramework.Entidad.IngresoEgreso>(filtro);
+            List<object> lista = fac.Leer<VCFramework.Entidad.IngresoEgreso>(filtro, setCns);
             List<VCFramework.Entidad.IngresoEgreso> lista2 = new List<VCFramework.Entidad.IngresoEgreso>();
             if (lista != null)
             {
@@ -74,13 +78,13 @@ namespace VCFramework.NegocioMySQL
         public static VCFramework.EntidadFuniconal.IngresoEgresoFuncional ObtenerIngresoEgresoPorId(int id)
         {
             VCFramework.EntidadFuniconal.IngresoEgresoFuncional retorno = new EntidadFuniconal.IngresoEgresoFuncional();
-            VCFramework.NegocioMySQL.Factory fac = new VCFramework.NegocioMySQL.Factory();
+            Factory fac = new Factory();
             FiltroGenerico filtro = new FiltroGenerico();
             filtro.Campo = "ID";
             filtro.Valor = id.ToString();
             filtro.TipoDato = TipoDatoGeneral.Entero;
 
-            List<object> lista = fac.Leer<VCFramework.Entidad.IngresoEgreso>(filtro);
+            List<object> lista = fac.Leer<VCFramework.Entidad.IngresoEgreso>(filtro, setCns);
             List<VCFramework.Entidad.IngresoEgreso> lista2 = new List<VCFramework.Entidad.IngresoEgreso>();
             if (lista != null)
             {

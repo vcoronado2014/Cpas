@@ -2,22 +2,27 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using VCFramework.Negocio.Factory;
 
 namespace VCFramework.NegocioMySQL
 {
     public class LoginUsuario
     {
+        public static System.Configuration.ConnectionStringSettings setCns = System.Web.Configuration.WebConfigurationManager.ConnectionStrings["BDColegioSql"];
+        public static System.Configuration.ConnectionStringSettings setCnsWebLun = System.Web.Configuration.WebConfigurationManager.ConnectionStrings["MSUsuarioLunConectionString"];
+
+
         public static int Insertar(Entidad.LoginUsuario login)
         {
             Factory fac = new Factory();
-            return fac.Insertar<Entidad.LoginUsuario>(login);
+            return fac.Insertar<Entidad.LoginUsuario>(login, setCns);
         }
         public static List<VCFramework.Entidad.LoginUsuario> ObtenerLogin()
         {
-            VCFramework.NegocioMySQL.Factory fac = new VCFramework.NegocioMySQL.Factory();
+            Factory fac = new Factory();
 
 
-            List<object> lista = fac.Leer<VCFramework.Entidad.LoginUsuario>();
+            List<object> lista = fac.Leer<VCFramework.Entidad.LoginUsuario>(setCns);
             List<VCFramework.Entidad.LoginUsuario> lista2 = new List<VCFramework.Entidad.LoginUsuario>();
             if (lista != null)
             {

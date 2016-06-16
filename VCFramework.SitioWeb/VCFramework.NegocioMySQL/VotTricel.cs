@@ -2,20 +2,24 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using VCFramework.Negocio.Factory;
 
 namespace VCFramework.NegocioMySQL
 {
     public class VotTricel
     {
+        public static System.Configuration.ConnectionStringSettings setCns = System.Web.Configuration.WebConfigurationManager.ConnectionStrings["BDColegioSql"];
+        public static System.Configuration.ConnectionStringSettings setCnsWebLun = System.Web.Configuration.WebConfigurationManager.ConnectionStrings["MSUsuarioLunConectionString"];
+
         public static List<VCFramework.Entidad.VotTricel> ObtenerVotacionTricelPorId(int id)
         {
-            VCFramework.NegocioMySQL.Factory fac = new VCFramework.NegocioMySQL.Factory();
+            Factory fac = new Factory();
             FiltroGenerico filtro = new FiltroGenerico();
             filtro.Campo = "ID";
             filtro.Valor = id.ToString();
             filtro.TipoDato = TipoDatoGeneral.Entero;
 
-            List<object> lista = fac.Leer<VCFramework.Entidad.VotTricel>(filtro);
+            List<object> lista = fac.Leer<VCFramework.Entidad.VotTricel>(filtro, setCns);
             List<VCFramework.Entidad.VotTricel> lista2 = new List<VCFramework.Entidad.VotTricel>();
             if (lista != null)
             {
@@ -32,7 +36,7 @@ namespace VCFramework.NegocioMySQL
             //int[] arrListas = NegocioMySQL.ListaTricel.ObtenerArregloListasDelTricel(triId);
 
 
-            VCFramework.NegocioMySQL.Factory fac = new VCFramework.NegocioMySQL.Factory();
+            Factory fac = new Factory();
             FiltroGenerico filtro = new FiltroGenerico();
             filtro.Campo = "USU_ID_VOTADOR";
             filtro.Valor = usu_id.ToString();
@@ -47,7 +51,7 @@ namespace VCFramework.NegocioMySQL
             filtros.Add(filtro);
             filtros.Add(filtro1);
 
-            List<object> lista = fac.Leer<VCFramework.Entidad.VotTricel>(filtros);
+            List<object> lista = fac.Leer<VCFramework.Entidad.VotTricel>(filtros, setCns);
             List<VCFramework.Entidad.VotTricel> lista2 = new List<VCFramework.Entidad.VotTricel>();
             if (lista != null)
             {
@@ -62,13 +66,13 @@ namespace VCFramework.NegocioMySQL
         }
         public static List<VCFramework.Entidad.VotTricel> ObtenerVotacionTricelPorListalId(int listaId)
         {
-            VCFramework.NegocioMySQL.Factory fac = new VCFramework.NegocioMySQL.Factory();
+            Factory fac = new Factory();
             FiltroGenerico filtro = new FiltroGenerico();
             filtro.Campo = "LTR_ID";
             filtro.Valor = listaId.ToString();
             filtro.TipoDato = TipoDatoGeneral.Entero;
 
-            List<object> lista = fac.Leer<VCFramework.Entidad.VotTricel>(filtro);
+            List<object> lista = fac.Leer<VCFramework.Entidad.VotTricel>(filtro, setCns);
             List<VCFramework.Entidad.VotTricel> lista2 = new List<VCFramework.Entidad.VotTricel>();
             if (lista != null)
             {

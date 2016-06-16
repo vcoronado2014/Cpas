@@ -2,15 +2,22 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using VCFramework.Negocio.Factory;
+
 
 namespace VCFramework.NegocioMySQL
 {
+
+
     public class AutentificacionUsuario
     {
+        public static System.Configuration.ConnectionStringSettings setCns = System.Web.Configuration.WebConfigurationManager.ConnectionStrings["BDColegioSql"];
+        public static System.Configuration.ConnectionStringSettings setCnsWebLun = System.Web.Configuration.WebConfigurationManager.ConnectionStrings["MSUsuarioLunConectionString"];
+
         public static List<VCFramework.Entidad.AutentificacionUsuario> ListarUsuarios()
         {
-            VCFramework.NegocioMySQL.Factory fac = new VCFramework.NegocioMySQL.Factory();
-            List<object> lista = fac.Leer<VCFramework.Entidad.AutentificacionUsuario>();
+            Factory fac = new Factory();
+            List<object> lista = fac.Leer<VCFramework.Entidad.AutentificacionUsuario>(setCns);
             List<VCFramework.Entidad.AutentificacionUsuario> lista2 = new List<VCFramework.Entidad.AutentificacionUsuario>();
             if (lista != null)
             {
@@ -21,12 +28,12 @@ namespace VCFramework.NegocioMySQL
 
         public static List<VCFramework.Entidad.AutentificacionUsuario> ListarUsuariosPorInstId(int instId)
         {
-            VCFramework.NegocioMySQL.Factory fac = new VCFramework.NegocioMySQL.Factory();
+            Factory fac = new Factory();
             FiltroGenerico filtro = new FiltroGenerico();
             filtro.Campo = "INST_ID";
             filtro.Valor = instId.ToString();
             filtro.TipoDato = TipoDatoGeneral.Entero;
-            List<object> lista = fac.Leer<VCFramework.Entidad.AutentificacionUsuario>(filtro);
+            List<object> lista = fac.Leer<VCFramework.Entidad.AutentificacionUsuario>(filtro, setCns);
             List<VCFramework.Entidad.AutentificacionUsuario> lista2 = new List<VCFramework.Entidad.AutentificacionUsuario>();
             if (lista != null)
             {
@@ -83,9 +90,9 @@ namespace VCFramework.NegocioMySQL
             aus.Borrado = false;
             aus.Modificado = true;
 
-            VCFramework.NegocioMySQL.Factory fac = new VCFramework.NegocioMySQL.Factory();
+            Factory fac = new Factory();
 
-            return fac.Update<VCFramework.Entidad.AutentificacionUsuario>(aus);
+            return fac.Update<VCFramework.Entidad.AutentificacionUsuario>(aus, setCns);
         }
     }
 }

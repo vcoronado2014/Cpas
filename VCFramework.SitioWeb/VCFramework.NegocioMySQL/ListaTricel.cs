@@ -2,14 +2,19 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using VCFramework.Negocio.Factory;
 
 namespace VCFramework.NegocioMySQL
 {
     public class ListaTricel
     {
+        public static System.Configuration.ConnectionStringSettings setCns = System.Web.Configuration.WebConfigurationManager.ConnectionStrings["BDColegioSql"];
+        public static System.Configuration.ConnectionStringSettings setCnsWebLun = System.Web.Configuration.WebConfigurationManager.ConnectionStrings["MSUsuarioLunConectionString"];
+
+
         public static List<VCFramework.Entidad.ListaTricel> ObtenerListaPorNombreInstId(string nombre, int instId)
         {
-            VCFramework.NegocioMySQL.Factory fac = new VCFramework.NegocioMySQL.Factory();
+            Factory fac = new Factory();
             FiltroGenerico filtro = new FiltroGenerico();
             filtro.Campo = "INST_ID";
             filtro.Valor = instId.ToString();
@@ -24,7 +29,7 @@ namespace VCFramework.NegocioMySQL
             filtros.Add(filtro);
             filtros.Add(filtro1);
 
-            List<object> lista = fac.Leer<VCFramework.Entidad.ListaTricel>(filtros);
+            List<object> lista = fac.Leer<VCFramework.Entidad.ListaTricel>(filtros, setCns);
             List<VCFramework.Entidad.ListaTricel> lista2 = new List<VCFramework.Entidad.ListaTricel>();
             if (lista != null)
             {
@@ -123,7 +128,7 @@ namespace VCFramework.NegocioMySQL
 
             #region comentado
 
-            //VCFramework.NegocioMySQL.Factory fac = new VCFramework.NegocioMySQL.Factory();
+            //Factory fac = new Factory();
             //FiltroGenerico filtro = new FiltroGenerico();
             //filtro.Campo = "TRI_ID";
             //filtro.Valor = idTricel.ToString();
@@ -279,13 +284,13 @@ namespace VCFramework.NegocioMySQL
 
         public static List<VCFramework.Entidad.ListaTricel> ObtenerListaTricelPorId(int id)
         {
-            VCFramework.NegocioMySQL.Factory fac = new VCFramework.NegocioMySQL.Factory();
+            Factory fac = new Factory();
             FiltroGenerico filtro = new FiltroGenerico();
             filtro.Campo = "ID";
             filtro.Valor = id.ToString();
             filtro.TipoDato = TipoDatoGeneral.Entero;
 
-            List<object> lista = fac.Leer<VCFramework.Entidad.ListaTricel>(filtro);
+            List<object> lista = fac.Leer<VCFramework.Entidad.ListaTricel>(filtro, setCns);
             List<VCFramework.Entidad.ListaTricel> lista2 = new List<VCFramework.Entidad.ListaTricel>();
             if (lista != null)
             {
@@ -298,13 +303,13 @@ namespace VCFramework.NegocioMySQL
         }
         public static List<VCFramework.Entidad.ListaTricel> ObtenerListaTricelPorTricelId(int triId)
         {
-            VCFramework.NegocioMySQL.Factory fac = new VCFramework.NegocioMySQL.Factory();
+            Factory fac = new Factory();
             FiltroGenerico filtro = new FiltroGenerico();
             filtro.Campo = "TRI_ID";
             filtro.Valor = triId.ToString();
             filtro.TipoDato = TipoDatoGeneral.Entero;
 
-            List<object> lista = fac.Leer<VCFramework.Entidad.ListaTricel>(filtro);
+            List<object> lista = fac.Leer<VCFramework.Entidad.ListaTricel>(filtro, setCns);
             List<VCFramework.Entidad.ListaTricel> lista2 = new List<VCFramework.Entidad.ListaTricel>();
             if (lista != null)
             {

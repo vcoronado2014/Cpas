@@ -63,6 +63,9 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
+    <Reference Include="VCFramework.Negocio.Factory">
+      <HintPath>E:\VCFramework\VCFramework.Negocio.Factory\VCFramework.Negocio.Factory\bin\Debug\VCFramework.Negocio.Factory.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ArchivosProyecto.cs" />
@@ -79,7 +82,6 @@
     <Compile Include="DocumentosUsuario.cs" />
     <Compile Include="ElementosGrupo.cs" />
     <Compile Include="Encabezado.cs" />
-    <Compile Include="Factory.cs" />
     <Compile Include="GrupoItem.cs" />
     <Compile Include="IngresoEgreso.cs" />
     <Compile Include="Institucion.cs" />

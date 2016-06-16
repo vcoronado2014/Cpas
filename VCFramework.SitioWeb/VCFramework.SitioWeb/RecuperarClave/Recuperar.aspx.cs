@@ -6,11 +6,15 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Text;
 using System.Net.Mail;
+using VCFramework.Negocio.Factory;
 
 namespace VCFramework.SitioWeb.RecuperarClave
 {
     public partial class Recuperar : System.Web.UI.Page
     {
+        public static System.Configuration.ConnectionStringSettings setCns = System.Web.Configuration.WebConfigurationManager.ConnectionStrings["BDColegioSql"];
+        public static System.Configuration.ConnectionStringSettings setCnsWebLun = System.Web.Configuration.WebConfigurationManager.ConnectionStrings["MSUsuarioLunConectionString"];
+
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -69,12 +73,12 @@ namespace VCFramework.SitioWeb.RecuperarClave
                             return;
                         }
                         //ahora modificamos al usuario
-                        NegocioMySQL.Factory fac = new NegocioMySQL.Factory();
+                        Factory fac = new Factory();
                         usuActual.AutentificacionUsuario.Borrado = false;
                         usuActual.AutentificacionUsuario.Modificado = true;
                         usuActual.AutentificacionUsuario.Nuevo = false;
                         usuActual.AutentificacionUsuario.Password = NegocioMySQL.Utiles.Encriptar(txtNuevaClave.Text);
-                        if (fac.Update<Entidad.AutentificacionUsuario>(usuActual.AutentificacionUsuario) > 0)
+                        if (fac.Update<Entidad.AutentificacionUsuario>(usuActual.AutentificacionUsuario, setCns) > 0)
                         {
                             //NegocioMySQL.ServidorCorreo cr = new NegocioMySQL.ServidorCorreo();
                             //MailMessage mnsj = NegocioMySQL.Utiles.ConstruyeMensajeCambiarClave(usuActual.AutentificacionUsuario.NombreUsuario, txtNuevaClave.Text, usuActual.AutentificacionUsuario.CorreoElectronico);

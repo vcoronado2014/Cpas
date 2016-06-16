@@ -4,20 +4,24 @@ using System.Linq;
 using System.Text;
 using Newtonsoft.Json;
 using System.Net.Mail;
+using VCFramework.Negocio.Factory;
 
 namespace VCFramework.NegocioMySQL
 {
     public class Calendario
     {
+        public static System.Configuration.ConnectionStringSettings setCns = System.Web.Configuration.WebConfigurationManager.ConnectionStrings["BDColegioSql"];
+        public static System.Configuration.ConnectionStringSettings setCnsWebLun = System.Web.Configuration.WebConfigurationManager.ConnectionStrings["MSUsuarioLunConectionString"];
+
         public static List<VCFramework.Entidad.Calendario> ObtenerCalendarioPorInstId(int instId)
         {
-            VCFramework.NegocioMySQL.Factory fac = new VCFramework.NegocioMySQL.Factory();
+            Factory fac = new Factory();
             FiltroGenerico filtro = new FiltroGenerico();
             filtro.Campo = "INST_ID";
             filtro.Valor = instId.ToString();
             filtro.TipoDato = TipoDatoGeneral.Entero;
 
-            List<object> lista = fac.Leer<VCFramework.Entidad.Calendario>(filtro);
+            List<object> lista = fac.Leer<VCFramework.Entidad.Calendario>(filtro, setCns);
             List<VCFramework.Entidad.Calendario> lista2 = new List<VCFramework.Entidad.Calendario>();
             if (lista != null)
             {
@@ -30,13 +34,13 @@ namespace VCFramework.NegocioMySQL
         }
         public static List<VCFramework.Entidad.Calendario> ObtenerCalendarioPorId(int id)
         {
-            VCFramework.NegocioMySQL.Factory fac = new VCFramework.NegocioMySQL.Factory();
+            Factory fac = new Factory();
             FiltroGenerico filtro = new FiltroGenerico();
             filtro.Campo = "ID";
             filtro.Valor = id.ToString();
             filtro.TipoDato = TipoDatoGeneral.Entero;
 
-            List<object> lista = fac.Leer<VCFramework.Entidad.Calendario>(filtro);
+            List<object> lista = fac.Leer<VCFramework.Entidad.Calendario>(filtro, setCns);
             List<VCFramework.Entidad.Calendario> lista2 = new List<VCFramework.Entidad.Calendario>();
             if (lista != null)
             {
@@ -69,7 +73,7 @@ namespace VCFramework.NegocioMySQL
                     cal.Nuevo = false;
                     cal.Modificado = true;
                     cal.Borrado = false;
-                    fac.Update<Entidad.Calendario>(cal);
+                    fac.Update<Entidad.Calendario>(cal, setCns);
                 }
                 #endregion
             }
@@ -105,7 +109,7 @@ namespace VCFramework.NegocioMySQL
                     calendario.Detalle = Descripcion;
                     calendario.Titulo = Descripcion;
 
-                    fac.Insertar<Entidad.Calendario>(calendario);
+                    fac.Insertar<Entidad.Calendario>(calendario, setCns);
 
                     if (NegocioMySQL.Utiles.ENVIA_CORREO_EVENTO(InstId) == "1")
                     {
@@ -167,7 +171,7 @@ namespace VCFramework.NegocioMySQL
 
                 calendario.Nuevo = false;
                 calendario.Modificado = true;
-                fac.Update<Entidad.Calendario>(calendario);
+                fac.Update<Entidad.Calendario>(calendario, setCns);
                 if (NegocioMySQL.Utiles.ENVIA_CORREO_EVENTO(InstId) == "1")
                 {
 
@@ -233,7 +237,7 @@ namespace VCFramework.NegocioMySQL
         {
             int retorno = 0;
             Factory fac = new Factory();
-            retorno = fac.Insertar<Entidad.Calendario>(entidad);
+            retorno = fac.Insertar<Entidad.Calendario>(entidad, setCns);
 
             return retorno;
         }

@@ -26,7 +26,7 @@ namespace VCFramework.SitioWeb
             //rol.Nuevo = true;
             //rol.Nombre = "Super Administrador";
             //rol.Descripcion = "Rol encargado de administrar todo el sistema con permisos especiales";
-            //VCFramework.NegocioMySQL.Factory fac = new NegocioMySQL.Factory();
+            //Factory fac = new Factory();
 
             //fac.Insertar<VCFramework.Entidad.Rol>(rol);
             #endregion

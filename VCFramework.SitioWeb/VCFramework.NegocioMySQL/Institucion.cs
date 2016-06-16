@@ -3,11 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Runtime.Caching;
+using VCFramework.Negocio.Factory;
 
 namespace VCFramework.NegocioMySQL
 {
     public class Institucion
     {
+        public static System.Configuration.ConnectionStringSettings setCns = System.Web.Configuration.WebConfigurationManager.ConnectionStrings["BDColegioSql"];
+        public static System.Configuration.ConnectionStringSettings setCnsWebLun = System.Web.Configuration.WebConfigurationManager.ConnectionStrings["MSUsuarioLunConectionString"];
+
         static ObjectCache cache = MemoryCache.Default;
         private static List<VCFramework.Entidad.Institucion> fileContents = cache["fileContentsInst"] as List<VCFramework.Entidad.Institucion>;
         private static DateTimeOffset tiempoCache = Cache.Fuerte();
@@ -16,11 +20,11 @@ namespace VCFramework.NegocioMySQL
         public static List<VCFramework.Entidad.Institucion> ListarInstituciones()
         {
             
-            VCFramework.NegocioMySQL.Factory fac = new VCFramework.NegocioMySQL.Factory();
+            Factory fac = new Factory();
             List<VCFramework.Entidad.Institucion> lista2 = new List<VCFramework.Entidad.Institucion>();
             if (fileContents == null)
             {
-                List<object> lista = fac.Leer<VCFramework.Entidad.Institucion>();
+                List<object> lista = fac.Leer<VCFramework.Entidad.Institucion>(setCns);
 
                 if (lista != null)
                 {
